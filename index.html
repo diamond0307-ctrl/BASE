@@ -22,34 +22,83 @@
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html {
-      height: 100%;
-    }
-
-    /* スワイプLP：縦スナップスクロール */
+    html,
     body {
+      width: 100%;
       height: 100%;
-      overflow-y: scroll;
-      scroll-snap-type: y mandatory;
-      -webkit-overflow-scrolling: touch;
+      margin: 0;
+      overflow: hidden;
       font-family: 'Noto Sans JP', 'Hiragino Sans', sans-serif;
       background: var(--beige);
       color: var(--black);
       -webkit-font-smoothing: antialiased;
     }
 
+    /* スワイプLP：bodyではなくこの要素をスクロールコンテナにする */
+    .swipe-container {
+      width: 100%;
+      height: 100dvh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-y: contain;
+      background: var(--beige);
+    }
+
     /* ===========================
        PAGE（各スワイプページ共通）
     =========================== */
-    .page {
-      height: 100vh;
+    .page,
+    .swipe-page {
+      width: 100%;
+      max-width: 430px;
+      height: 100dvh;
+      min-height: 100dvh;
+      margin: 0 auto;
       scroll-snap-align: start;
+      scroll-snap-stop: always;
       overflow: hidden;
       display: flex;
       flex-direction: column;
-      max-width: 430px;
-      margin: 0 auto;
       background: var(--beige);
+    }
+
+    #page1,
+    #page2,
+    #page3,
+    #page-voices,
+    #page4,
+    #page-team,
+    #page-flow,
+    #page5,
+    #page6,
+    #page-final-cta {
+      height: 100dvh;
+      min-height: 100dvh;
+      overflow: hidden;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+    }
+
+    @supports not (height: 100dvh) {
+      .swipe-container,
+      .page,
+      .swipe-page,
+      #page1,
+      #page2,
+      #page3,
+      #page-voices,
+      #page4,
+      #page-team,
+      #page-flow,
+      #page5,
+      #page6,
+      #page-final-cta {
+        height: 100vh;
+        min-height: 100vh;
+      }
     }
 
     /* ===========================
@@ -103,7 +152,7 @@
     =========================== */
     .hero {
       flex: 0 0 auto;
-      height: calc(100vh - 57px - 98px - 130px - 34px - 70px - 22px);
+      height: calc(100dvh - 57px - 98px - 130px - 34px - 70px - 22px);
       min-height: 160px;
       max-height: 260px;
       position: relative;
@@ -423,12 +472,60 @@
       padding: 6px 16px 8px;
     }
 
+    @media (max-height: 700px) {
+      .header { padding: 6px 14px 5px; gap: 8px; }
+      .logo-mark svg { width: 30px; height: 30px; }
+      .logo-wordmark .pts { font-size: 6.8px; }
+      .logo-wordmark .base { font-size: 23px; }
+      .logo-wordmark .kana { font-size: 8px; margin-top: 1px; }
+      .hero {
+        height: calc(100dvh - 42px - 82px - 108px - 27px - 56px - 12px);
+        min-height: 122px;
+        max-height: 180px;
+      }
+      .hero-body { padding: 10px 4px 0 14px; }
+      .hero-lead { font-size: 10px; line-height: 1.25; margin-bottom: 4px; }
+      .hero-headline { font-size: 32px; line-height: 0.98; }
+      .hero-rule { width: 34px; height: 2px; margin: 7px 0 6px; }
+      .hero-sub { font-size: 9.6px; line-height: 1.45; }
+      .features { gap: 8px; padding: 6px 12px 5px; }
+      .feat { gap: 4px; }
+      .feat-circle { width: 48px; height: 48px; }
+      .feat-circle svg { width: 22px; height: 22px; }
+      .feat-label { font-size: 9.3px; line-height: 1.25; }
+      .campaign-outer { padding: 0 10px; }
+      .campaign-card { border-radius: 14px; }
+      .campaign-tag { padding: 5px 12px 4px; }
+      .campaign-tag-inner { padding: 2px 9px; }
+      .campaign-tag-inner span { font-size: 9.8px; }
+      .campaign-col { padding: 7px 7px 8px; gap: 2px; }
+      .c-label { font-size: 10.5px; }
+      .c-badge { font-size: 9px; padding: 1px 8px; }
+      .c-price,
+      .c-free { font-size: 38px; }
+      .c-free-unit { font-size: 20px; }
+      .c-price-unit { font-size: 10px; }
+      .c-note { font-size: 9.8px; line-height: 1.35; }
+      .access { gap: 10px; padding: 5px 12px 2px; }
+      .access-item { font-size: 9.2px; gap: 3px; }
+      .access-item svg { width: 17px; height: 17px; }
+      .cta-section { padding: 5px 10px 0; }
+      .cta-caption { font-size: 9px; margin-bottom: 4px; }
+      .cta-btn { padding: 10px 15px; }
+      .cta-text { font-size: 13px; }
+      .line-icon-wrap { width: 25px; height: 25px; }
+      .line-icon-wrap svg { width: 18px; height: 18px; }
+      .cta-arrow { font-size: 20px; }
+      .footer-note { padding: 3px 12px 4px; font-size: 8.5px; }
+    }
+
 
     /* ===========================
        PAGE 2  ─  実際の結果
     =========================== */
     #page2, #page3 {
-      height: 100vh;
+      height: 100dvh;
+      min-height: 100dvh;
       overflow: hidden;
       background: #FFFFFF;
       display: flex;
@@ -789,13 +886,13 @@
     #page-voices {
       background: #FFFFFF;
       overflow: hidden;
-      padding: 9px 12px 10px;
+      padding: 12px 12px 11px;
     }
     .cv-wrap {
       height: 100%;
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       overflow: hidden;
     }
     .cv-head {
@@ -803,7 +900,7 @@
       text-align: center;
     }
     .cv-kicker {
-      font-size: 10px;
+      font-size: 10.5px;
       font-weight: 900;
       letter-spacing: 0.08em;
       color: #061A44;
@@ -811,11 +908,11 @@
     }
     .cv-title {
       margin-top: 2px;
-      font-size: 28px;
+      font-size: 24px;
       font-weight: 900;
       color: #061A44;
-      line-height: 1;
-      letter-spacing: 0.08em;
+      line-height: 1.12;
+      letter-spacing: 0;
     }
     .cv-title-line {
       width: 78px;
@@ -825,7 +922,7 @@
       margin: 5px auto 4px;
     }
     .cv-lead {
-      font-size: 10.5px;
+      font-size: 11px;
       font-weight: 700;
       color: #061A44;
       line-height: 1.35;
@@ -833,18 +930,18 @@
     .cv-list {
       display: flex;
       flex-direction: column;
-      gap: 6px;
+      gap: 8px;
       flex-shrink: 0;
     }
     .cv-card {
       display: grid;
-      grid-template-columns: 62px 1fr;
+      grid-template-columns: 70px 1fr;
       gap: 8px;
       background: #FFFFFF;
       border: 1px solid #E5E7EB;
-      border-radius: 12px;
-      box-shadow: 0 3px 14px rgba(6,26,68,0.07);
-      padding: 8px 9px;
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(6,26,68,0.08);
+      padding: 9px 9px;
       min-height: 0;
     }
     .cv-profile {
@@ -852,10 +949,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 4px;
+      gap: 5px;
       min-width: 0;
     }
     .cv-avatar {
+      display: none;
       width: 42px;
       height: 42px;
       border: 1.5px solid rgba(6,26,68,0.35);
@@ -883,7 +981,7 @@
       white-space: nowrap;
     }
     .cv-job {
-      font-size: 9px;
+      font-size: 9.5px;
       font-weight: 800;
       color: #061A44;
       line-height: 1.2;
@@ -913,30 +1011,34 @@
     }
     .cv-stars {
       color: #F6B800;
-      font-size: 12px;
+      font-size: 11px;
       letter-spacing: 0.05em;
       line-height: 1;
     }
     .cv-card-title {
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 900;
       color: #061A44;
       line-height: 1.28;
     }
     .cv-text {
-      font-size: 9.6px;
+      font-size: 9.5px;
       font-weight: 600;
       color: #1F2937;
-      line-height: 1.48;
+      line-height: 1.38;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
     .cv-result {
       position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      background: #F0F8F3;
-      border: 1px solid rgba(31,143,78,0.14);
-      border-radius: 8px;
-      margin-top: 1px;
+      background: linear-gradient(180deg, #F2FBF5 0%, #FFFFFF 100%);
+      border: 1.5px solid rgba(0,122,61,0.22);
+      border-radius: 11px;
+      margin-top: 2px;
       overflow: hidden;
     }
     .cv-result::before {
@@ -944,9 +1046,9 @@
       position: absolute;
       left: 7px;
       top: -1px;
-      background: #1F8F4E;
+      background: #007A3D;
       color: #FFFFFF;
-      font-size: 8px;
+      font-size: 8.5px;
       font-weight: 900;
       line-height: 1;
       padding: 3px 7px;
@@ -954,28 +1056,29 @@
     }
     .cv-result-item {
       display: flex;
-      align-items: baseline;
+      flex-direction: column;
+      align-items: center;
       justify-content: center;
-      gap: 4px;
-      padding: 15px 6px 7px;
+      gap: 2px;
+      padding: 17px 5px 8px;
     }
     .cv-result-item + .cv-result-item {
       border-left: 1px solid rgba(6,26,68,0.18);
     }
     .cv-result-label {
-      font-size: 9.5px;
+      font-size: 10px;
       font-weight: 900;
       color: #061A44;
     }
     .cv-result-num {
-      font-size: 21px;
+      font-size: 30px;
       font-weight: 900;
-      color: #1F8F4E;
+      color: #007A3D;
       line-height: 1;
       letter-spacing: -0.02em;
     }
     .cv-result-num small {
-      font-size: 10px;
+      font-size: 14px;
       font-weight: 900;
       letter-spacing: 0;
     }
@@ -1036,19 +1139,14 @@
     }
     .cv-bottom {
       flex-shrink: 0;
-      display: grid;
-      grid-template-columns: 32px 1fr;
-      gap: 9px;
-      align-items: center;
+      text-align: center;
       background: #FFF9E8;
       border: 1px solid rgba(246,184,0,0.65);
-      border-radius: 10px;
-      padding: 8px 12px;
+      border-radius: 12px;
+      padding: 9px 12px;
     }
     .cv-bottom-icon {
-      width: 32px;
-      height: 32px;
-      color: #F6B800;
+      display: none;
     }
     .cv-bottom-icon svg {
       width: 100%;
@@ -1056,14 +1154,14 @@
       fill: currentColor;
     }
     .cv-bottom-main {
-      font-size: 13px;
+      font-size: 13.5px;
       font-weight: 900;
       color: #061A44;
-      line-height: 1.3;
+      line-height: 1.35;
     }
     .cv-bottom-sub {
-      margin-top: 2px;
-      font-size: 10px;
+      margin-top: 3px;
+      font-size: 10.5px;
       font-weight: 800;
       color: #061A44;
       line-height: 1.35;
@@ -1073,24 +1171,35 @@
     }
     @media (max-height: 780px) {
       #page-voices { padding: 7px 10px 8px; }
-      .cv-wrap { gap: 5px; }
-      .cv-title { font-size: 24px; }
+      .cv-wrap { gap: 6px; }
+      .cv-kicker { font-size: 9.4px; }
+      .cv-title { font-size: 21px; }
+      .cv-lead { font-size: 9.8px; }
       .cv-title-line { margin: 4px auto 3px; }
-      .cv-card { grid-template-columns: 56px 1fr; gap: 7px; padding: 7px 8px; }
+      .cv-list { gap: 6px; }
+      .cv-card { grid-template-columns: 62px 1fr; gap: 7px; padding: 7px 8px; }
       .cv-avatar { width: 36px; height: 36px; }
       .cv-avatar svg { width: 28px; height: 28px; }
-      .cv-card-title { font-size: 12.5px; }
-      .cv-text { font-size: 8.9px; line-height: 1.4; }
-      .cv-result-item { padding: 13px 4px 6px; }
-      .cv-result-num { font-size: 18px; }
+      .cv-age { font-size: 8.6px; padding: 3px 5px; }
+      .cv-job { font-size: 8.8px; }
+      .cv-purpose { font-size: 8px; line-height: 1.25; }
+      .cv-purpose span { font-size: 8px; }
+      .cv-stars { font-size: 10px; }
+      .cv-card-title { font-size: 11.5px; }
+      .cv-text { font-size: 8.6px; line-height: 1.3; }
+      .cv-result-item { padding: 15px 4px 7px; }
+      .cv-result-num { font-size: 26px; }
+      .cv-result-num small { font-size: 12px; }
+      .cv-result-label { font-size: 9px; }
+      .cv-result::before { font-size: 8px; padding: 3px 6px; }
       .cv-reasons { padding: 6px; }
       .cv-reason-icon { width: 17px; height: 17px; margin-bottom: 3px; }
       .cv-reason-title { font-size: 8px; }
       .cv-reason-text { font-size: 7px; line-height: 1.28; }
-      .cv-bottom { padding: 7px 10px; grid-template-columns: 28px 1fr; }
+      .cv-bottom { padding: 7px 10px; }
       .cv-bottom-icon { width: 28px; height: 28px; }
-      .cv-bottom-main { font-size: 12px; }
-      .cv-bottom-sub { font-size: 9px; }
+      .cv-bottom-main { font-size: 11.5px; }
+      .cv-bottom-sub { font-size: 9.5px; }
     }
 
 
@@ -1553,6 +1662,23 @@
     .faq-consult-highlight {
       background: linear-gradient(transparent 58%, rgba(246,184,0,0.48) 58%);
     }
+    .faq-next-copy {
+      flex-shrink: 0;
+      text-align: center;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 9px 10px;
+      color: #061A44;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1.45;
+      box-shadow: 0 4px 12px rgba(6,26,68,0.05);
+    }
+    .faq-next-copy span {
+      color: #1F8F4E;
+      background: linear-gradient(transparent 60%, rgba(246,184,0,0.42) 60%);
+    }
     .faq-photo-wrap {
       flex-shrink: 0;
       border-radius: 12px;
@@ -1586,6 +1712,7 @@
       .faq-consult-icon { width: 32px; height: 32px; }
       .faq-consult-title { font-size: 11.5px; }
       .faq-consult-body { font-size: 9px; }
+      .faq-next-copy { font-size: 10px; padding: 8px 9px; }
     }
 
     /* ===========================
@@ -1862,6 +1989,19 @@
       line-height: 1;
       white-space: nowrap;
     }
+    .flow-note-copy {
+      flex-shrink: 0;
+      text-align: center;
+      background: #FFFFFF;
+      border: 1px solid rgba(6,26,68,0.12);
+      border-radius: 12px;
+      padding: 9px 10px;
+      color: #061A44;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1.45;
+      box-shadow: 0 4px 12px rgba(6,26,68,0.05);
+    }
     @media (max-height: 780px) {
       .flow-section { padding: 12px 12px 10px; gap: 7px; }
       .flow-kicker { font-size: 9px; margin-bottom: 2px; }
@@ -1885,13 +2025,15 @@
       .flow-light-cta { padding: 8px 10px; }
       .flow-light-cta strong { font-size: 10.5px; }
       .flow-light-cta span { font-size: 10px; padding: 7px 10px; }
+      .flow-note-copy { font-size: 10px; padding: 8px 9px; }
     }
 
     /* ===========================
        あなたを支えるサポートチーム
     =========================== */
     #page-team {
-      height: 100vh;
+      height: 100dvh;
+      min-height: 100dvh;
       background: #F7F8FA;
       overflow: hidden;
     }
@@ -2023,10 +2165,19 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: center top;
+      object-position: center 28%;
       display: block;
       transform: scale(1.03);
       transition: transform 0.75s ease-out;
+    }
+    .team-photo-img-1 {
+      object-position: center 34%;
+    }
+    .team-photo-img-2 {
+      object-position: center 32%;
+    }
+    .team-photo-img-staff {
+      object-position: center 30%;
     }
     .team-card.team-visible .team-photo img,
     .team-card.team-visible .team-placeholder svg {
@@ -2322,7 +2473,8 @@
        FINAL CTA  ─  LINE予約
     =========================== */
     #page-final-cta {
-      height: 100vh;
+      height: 100dvh;
+      min-height: 100dvh;
       overflow: hidden;
       background: linear-gradient(180deg, #F7F8FA 0%, #FFFFFF 100%);
     }
@@ -2674,11 +2826,12 @@
   </style>
 </head>
 <body>
+<main class="swipe-container">
 
   <!-- =====================================================
        PAGE 1  ─  iPhone 390×844 1画面に全情報を収める
   ===================================================== -->
-  <div class="page" id="page1">
+  <section class="swipe-page page" id="page1">
 
     <!-- HEADER -->
     <header class="header">
@@ -2824,7 +2977,7 @@
       <!-- ── ここを編集：CTAキャプション ── -->
       <p class="cta-caption">＼ まずはお気軽にご相談ください ／</p>
       <!-- ── ここを編集：CTAボタン（href に LINE URL を設定） ── -->
-      <a href="#" class="cta-btn">
+      <a href="https://lin.ee/97r7BRA" class="cta-btn">
         <div class="cta-left">
           <div class="line-icon-wrap">
             <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -2838,13 +2991,13 @@
       </a>
     </div>
 
-  </div>
+  </section>
   <!-- /PAGE 1 -->
 
   <!-- =====================================================
        PAGE 2  ─  実際の結果①（-7.0kg）
   ===================================================== -->
-  <div class="page" id="page2">
+  <section class="swipe-page page" id="page2">
 
     <div class="rp-tag-row">
       <div class="rp-tag">実際の結果</div>
@@ -2916,7 +3069,7 @@
     <p class="rp-footnote">※結果には個人差があります。効果を保証するものではありません。</p>
 
     <div class="rp-cta">
-      <a href="#" class="rp-cta-btn">
+      <a href="https://lin.ee/97r7BRA" class="rp-cta-btn">
         <div class="cta-left">
           <div class="line-icon-wrap">
             <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -2929,20 +3082,20 @@
       </a>
     </div>
 
-  </div>
+  </section>
   <!-- /PAGE 2 -->
 
   <!-- =====================================================
        お客様の声  ─  3件レビュー
   ===================================================== -->
-  <div class="page" id="page-voices">
+  <section class="swipe-page page" id="page-voices">
     <section class="cv-wrap" aria-labelledby="cv-title">
 
       <div class="cv-head">
-        <p class="cv-kicker">＼ 実際に3ヶ月で結果を出した方のリアルな声をご紹介！ ／</p>
-        <h2 class="cv-title" id="cv-title">お客様の声</h2>
+        <p class="cv-kicker">＼ 結果で見るBASEの3ヶ月 ／</p>
+        <h2 class="cv-title" id="cv-title">3ヶ月で変わった<br>リアルな数字</h2>
         <div class="cv-title-line"></div>
-        <p class="cv-lead">BASEで目標を達成されたお客様の喜びの声をご紹介します。</p>
+        <p class="cv-lead">BASEで目標を達成された方のリアルな結果をご紹介します。</p>
       </div>
 
       <div class="cv-list">
@@ -2962,7 +3115,7 @@
           <div class="cv-main">
             <div class="cv-stars">★★★★★</div>
             <h3 class="cv-card-title">運動経験がなくても続けられました！</h3>
-            <p class="cv-text">体調に合わせたメニューで無理なく継続。食事も具体的に教えてもらえ、自然と改善できました。</p>
+            <p class="cv-text">体調に合わせたメニューで、無理なく継続。食事も自然に改善できました。</p>
             <div class="cv-result">
               <div class="cv-result-item">
                 <span class="cv-result-label">体重</span>
@@ -2991,8 +3144,8 @@
           </div>
           <div class="cv-main">
             <div class="cv-stars">★★★★★</div>
-            <h3 class="cv-card-title">仕事帰りに通えて結果が出せました！</h3>
-            <p class="cv-text">LINEサポートで食事を無理なく改善。通いやすい立地も、続けられた大きな理由です。</p>
+            <h3 class="cv-card-title">仕事帰りでも通えて結果が出ました！</h3>
+            <p class="cv-text">LINEでの食事サポートが続けやすく、仕事のパフォーマンスも上がりました。</p>
             <div class="cv-result">
               <div class="cv-result-item">
                 <span class="cv-result-label">体重</span>
@@ -3022,7 +3175,7 @@
           <div class="cv-main">
             <div class="cv-stars">★★★★★</div>
             <h3 class="cv-card-title">健康診断の数値も改善しました！</h3>
-            <p class="cv-text">生活習慣まで見直せました。体力がつき、疲れにくくなったのを実感しています。</p>
+            <p class="cv-text">生活習慣までサポートしてもらい、疲れにくい身体に変わりました。</p>
             <div class="cv-result">
               <div class="cv-result-item">
                 <span class="cv-result-label">体重</span>
@@ -3037,61 +3190,21 @@
         </article>
       </div>
 
-      <div class="cv-reasons">
-        <h3 class="cv-reasons-title">多くのお客様に選ばれる理由</h3>
-        <div class="cv-reason-grid">
-          <div class="cv-reason-item">
-            <div class="cv-reason-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 11h10M8 16h6"/><path d="M12 3a8 8 0 0 0-8 8c0 4.5 4 8 8 8h1l4 2v-4a8.1 8.1 0 0 0 3-6 8 8 0 0 0-8-8z"/></svg>
-            </div>
-            <p class="cv-reason-title">丁寧なサポート</p>
-            <p class="cv-reason-text">一人ひとりに合わせたプランをご提案</p>
-          </div>
-          <div class="cv-reason-item">
-            <div class="cv-reason-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 3v18M12 3v18"/><path d="M17 4v17M7 9h10"/></svg>
-            </div>
-            <p class="cv-reason-title">無理のない食事指導</p>
-            <p class="cv-reason-text">極端な制限をせず、続けやすい食事へ</p>
-          </div>
-          <div class="cv-reason-item">
-            <div class="cv-reason-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="18" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/><path d="M9 2h6v4H9z"/></svg>
-            </div>
-            <p class="cv-reason-title">継続できる仕組み</p>
-            <p class="cv-reason-text">毎日の報告とアドバイスで習慣化</p>
-          </div>
-          <div class="cv-reason-item">
-            <div class="cv-reason-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M20 8c0 7-8 11-8 11S4 15 4 8a4 4 0 0 1 7-2.5A4 4 0 0 1 20 8z"/><path d="M7 12h3l2-4 2 8 2-4h3"/></svg>
-            </div>
-            <p class="cv-reason-title">健康的に理想の体へ</p>
-            <p class="cv-reason-text">体調や生活習慣も整える</p>
-          </div>
-        </div>
-      </div>
-
       <div class="cv-bottom">
-        <div class="cv-bottom-icon" aria-hidden="true">
-          <svg viewBox="0 0 40 40">
-            <circle cx="10" cy="9" r="5"/><circle cx="20" cy="8" r="6"/><circle cx="30" cy="9" r="5"/>
-            <rect x="5" y="17" width="10" height="17" rx="5"/><rect x="14" y="16" width="12" height="19" rx="6"/><rect x="25" y="17" width="10" height="17" rx="5"/>
-          </svg>
-        </div>
         <div>
-          <p class="cv-bottom-main">運動初心者の方や、ダイエットが続かなかった方も<br>BASEで<span class="cv-yellow">理想のカラダ</span>を目指しています！</p>
-          <p class="cv-bottom-sub">あなたも一歩踏み出して、<span class="cv-yellow">理想の自分</span>を目指しませんか？</p>
+          <p class="cv-bottom-main">運動初心者でも、<span class="cv-yellow">結果は出せる。</span></p>
+          <p class="cv-bottom-sub">まずは60分の体験で確かめてください。</p>
         </div>
       </div>
 
     </section>
-  </div>
+  </section>
   <!-- /お客様の声 -->
 
   <!-- =====================================================
        PAGE 4  ─  BASEが選ばれる3つの理由
   ===================================================== -->
-  <div class="page" id="page4">
+  <section class="swipe-page page" id="page4">
     <div class="reasons-wrap">
 
       <!-- 上部ラベル -->
@@ -3187,13 +3300,13 @@
       </div>
 
     </div>
-  </div>
+  </section>
   <!-- /PAGE 4 -->
 
   <!-- =====================================================
        あなたを支えるサポートチーム
   ===================================================== -->
-  <div class="page" id="page-team">
+  <section class="swipe-page page" id="page-team">
     <section class="team-section" aria-labelledby="team-title">
 
       <div class="team-hero">
@@ -3212,7 +3325,7 @@
         <article class="team-card">
           <div class="team-card-top">
             <div class="team-photo">
-              <img src="trainer1.jpg" alt="松冨 知樹">
+              <img class="team-photo-img-1" src="trainer1.jpg" alt="松冨 知樹">
             </div>
           </div>
           <div class="team-card-body">
@@ -3229,7 +3342,7 @@
         <article class="team-card">
           <div class="team-card-top">
             <div class="team-photo">
-              <img src="trainer2.jpg" alt="岩坪 雄介">
+              <img class="team-photo-img-2" src="trainer2.jpg" alt="岩坪 雄介">
             </div>
           </div>
           <div class="team-card-body">
@@ -3268,7 +3381,7 @@
         <article class="team-card">
           <div class="team-card-top">
             <div class="team-photo">
-              <img src="staff1.jpg" alt="柳川 希">
+              <img class="team-photo-img-staff" src="staff1.jpg" alt="柳川 希">
             </div>
           </div>
           <div class="team-card-body">
@@ -3328,13 +3441,13 @@
       </div>
 
     </section>
-  </div>
+  </section>
   <!-- /サポートチーム -->
 
   <!-- =====================================================
        ご入会までの流れ
   ===================================================== -->
-  <div class="page" id="page-flow">
+  <section class="swipe-page page" id="page-flow">
     <section class="flow-section" aria-labelledby="flow-title">
 
       <div class="flow-head">
@@ -3439,19 +3552,19 @@
         </div>
       </div>
 
-      <a href="#" class="flow-light-cta">
+      <a href="https://lin.ee/97r7BRA" class="flow-light-cta">
         <strong>流れが分かったら、<br>まずは日程相談へ</strong>
         <span>LINEで相談</span>
       </a>
 
     </section>
-  </div>
+  </section>
   <!-- /ご入会までの流れ -->
 
   <!-- =====================================================
        PAGE 5  ─  よくある不安と答え
   ===================================================== -->
-  <div class="page" id="page5">
+  <section class="swipe-page page" id="page5">
     <section class="faq-section" aria-labelledby="faq-title">
 
       <p class="faq-kicker">はじめての方でも安心してご利用いただけます</p>
@@ -3532,13 +3645,13 @@
       </div>
 
     </section>
-  </div>
+  </section>
   <!-- /PAGE 5 -->
 
   <!-- =====================================================
        PAGE 6  ─  3ヶ月集中サポートコース
   ===================================================== -->
-  <div class="page" id="page6">
+  <section class="swipe-page page" id="page6">
     <div class="cp-wrap">
 
       <!-- ① 見出しエリア -->
@@ -3643,7 +3756,7 @@
           </ul>
         </div>
         <p class="cp-cta-caption">無理な勧誘は一切ありません。お気軽にご相談ください！</p>
-        <a href="#" class="cp-cta-btn">
+        <a href="https://lin.ee/97r7BRA" class="cp-cta-btn">
           <span class="cp-line-icon">
             <svg viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           </span>
@@ -3654,13 +3767,13 @@
       </div>
 
     </div>
-  </div>
+  </section>
   <!-- /PAGE 6 -->
 
   <!-- =====================================================
        FINAL CTA  ─  最終LINE予約
   ===================================================== -->
-  <div class="page" id="page-final-cta">
+  <section class="swipe-page page" id="page-final-cta">
     <section class="final-cta-section" aria-labelledby="final-cta-title">
       <div class="final-cta-card">
         <p class="final-cta-kicker">まずは60分の体験から</p>
@@ -3675,7 +3788,7 @@
           <p class="final-price-label">体験トレーニング<br>60分 特別価格</p>
           <p class="final-price">2,200<small>円（税込）</small></p>
         </div>
-        <a href="#" class="final-line-btn">
+        <a href="https://lin.ee/97r7BRA" class="final-line-btn">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
           </svg>
@@ -3695,8 +3808,10 @@
         <span>3ヶ月後の自信</span>につながります。
       </p>
     </section>
-  </div>
+  </section>
   <!-- /FINAL CTA -->
+
+</main>
 
 <script>
   const wrap = document.querySelector('.reasons-wrap');
