@@ -109,7 +109,7 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      padding: 10px 16px 9px;
+      padding: 9px 16px 8px;
       background: var(--white);
       border-bottom: 1px solid #ECE6DC;
     }
@@ -152,11 +152,11 @@
     =========================== */
     .hero {
       flex: 0 0 auto;
-      height: calc(100dvh - 57px - 98px - 130px - 34px - 70px - 22px);
-      min-height: 160px;
-      max-height: 260px;
+      height: 44vh;
+      min-height: 310px;
+      max-height: 420px;
       position: relative;
-      overflow: hidden;
+      overflow: visible;
       background: var(--beige);
     }
 
@@ -164,20 +164,26 @@
     .hero-left {
       position: relative;
       z-index: 2;
-      width: 62%;
+      width: 66%;
       height: 100%;
-      background: linear-gradient(to right, rgba(246,240,232,1) 55%, rgba(246,240,232,0) 100%);
+      background: linear-gradient(
+        to right,
+        rgba(246,240,232,0.98) 0%,
+        rgba(246,240,232,0.92) 48%,
+        rgba(246,240,232,0.35) 78%,
+        rgba(246,240,232,0) 100%
+      );
     }
     .hero-body {
-      padding: 16px 6px 0 18px;
+      padding: 15px 4px 0 16px;
     }
 
     /* ── ここを編集：サブリード ── */
     .hero-lead {
-      font-size: 12px;
-      font-weight: 700;
+      font-size: clamp(13px, 3.7vw, 16px);
+      font-weight: 900;
       color: var(--black);
-      letter-spacing: 0.02em;
+      letter-spacing: -0.01em;
       margin-bottom: 6px;
       line-height: 1.4;
     }
@@ -185,11 +191,11 @@
 
     /* ── ここを編集：メインキャッチ ── */
     .hero-headline {
-      font-size: 44px;
+      font-size: clamp(44px, 12vw, 58px);
       font-weight: 900;
-      line-height: 1.0;
+      line-height: 1.02;
       color: var(--black);
-      letter-spacing: -0.04em;
+      letter-spacing: -0.05em;
       word-break: keep-all;
     }
     .hero-headline .hl-line1 { display: block; }
@@ -201,16 +207,16 @@
       width: 44px;
       height: 3px;
       background: var(--orange);
-      margin: 10px 0 10px;
+      margin: 9px 0 9px;
       border-radius: 2px;
     }
 
     /* ── ここを編集：サブコピー ── */
     .hero-sub {
-      font-size: 11.5px;
-      font-weight: 500;
+      font-size: clamp(12px, 3.2vw, 14px);
+      font-weight: 700;
       color: #2a2a2a;
-      line-height: 1.75;
+      line-height: 1.7;
     }
     .hero-sub .ul {
       font-weight: 700;
@@ -226,9 +232,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 54% 22%;
+      object-position: 62% 18%;
       display: block;
-      filter: contrast(1.22) saturate(1.1) brightness(0.95);
+      filter: contrast(1.15) saturate(1.08) brightness(0.98);
       z-index: 0;
     }
     /* 下フェード */
@@ -236,7 +242,7 @@
       content: "";
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 50px;
+      height: 62px;
       background: linear-gradient(to bottom, rgba(246,240,232,0) 0%, var(--beige) 100%);
       z-index: 3;
       pointer-events: none;
@@ -250,8 +256,11 @@
       display: flex;
       justify-content: center;
       gap: 10px;
-      padding: 8px 14px 8px;
-      background: var(--beige);
+      position: relative;
+      z-index: 5;
+      margin-top: -34px;
+      padding: 0 18px 10px;
+      background: transparent;
     }
     .feat {
       flex: 1;
@@ -261,15 +270,15 @@
       gap: 6px;
     }
     .feat-circle {
-      width: 62px;
-      height: 62px;
+      width: 78px;
+      height: 78px;
       border-radius: 50%;
-      background: var(--white);
-      border: 1.5px solid var(--border);
+      background: #fff;
+      border: 1.5px solid #ECE6DC;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
     }
     .feat-circle svg {
       width: 28px;
@@ -282,10 +291,10 @@
     }
     /* ── ここを編集：アイコンラベル ── */
     .feat-label {
-      font-size: 11px;
-      font-weight: 700;
+      font-size: 12px;
+      font-weight: 900;
       text-align: center;
-      line-height: 1.4;
+      line-height: 1.35;
       color: var(--orange);
     }
 
@@ -294,12 +303,14 @@
     =========================== */
     .campaign-outer {
       flex: 0 0 auto;
-      padding: 0 12px 0;
+      padding: 0 16px;
+      position: relative;
+      z-index: 6;
     }
     .campaign-card {
       background: var(--white);
       border-radius: 18px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.13);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.14);
       overflow: hidden;
     }
     .campaign-tag {
@@ -318,8 +329,8 @@
     }
     /* ── ここを編集：キャンペーンラベル ── */
     .campaign-tag-inner span {
-      font-size: 11.5px;
-      font-weight: 700;
+      font-size: 13px;
+      font-weight: 900;
       color: var(--orange);
       letter-spacing: 0.04em;
     }
@@ -328,18 +339,18 @@
     }
     .campaign-col {
       flex: 1;
-      padding: 10px 8px 12px;
+      padding: 10px 8px 11px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 3px;
+      gap: 2px;
     }
     .campaign-col + .campaign-col {
       border-left: 1px solid #F0EAE0;
     }
     /* ── ここを編集：初回体験ラベル ── */
     .c-label {
-      font-size: 12.5px;
+      font-size: 15px;
       font-weight: 900;
       color: var(--black);
     }
@@ -354,20 +365,20 @@
     }
     /* ── ここを編集：価格数字 ── */
     .c-price {
-      font-size: 52px;
+      font-size: clamp(58px, 15vw, 72px);
       font-weight: 900;
       color: var(--orange);
       line-height: 1;
       letter-spacing: -0.03em;
     }
     .c-price-unit {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--black);
       font-weight: 900;
     }
     /* ── ここを編集：入会金説明 ── */
     .c-note {
-      font-size: 11.5px;
+      font-size: 13px;
       color: var(--black);
       font-weight: 900;
       text-align: center;
@@ -375,7 +386,7 @@
     }
     .c-note s { color: #B8B0A8; font-weight: 400; }
     .c-free {
-      font-size: 52px;
+      font-size: clamp(58px, 15vw, 72px);
       font-weight: 900;
       color: var(--orange);
       line-height: 1;
@@ -391,16 +402,17 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 16px;
-      padding: 8px 16px 4px;
+      gap: 12px;
+      padding: 7px 12px 2px;
     }
     .access-item {
       display: flex;
       align-items: center;
-      gap: 5px;
-      font-size: 11.5px;
-      font-weight: 600;
+      gap: 4px;
+      font-size: 11px;
+      font-weight: 900;
       color: #333;
+      white-space: nowrap;
     }
     .access-item svg { flex-shrink: 0; width: 22px; height: 22px; }
 
@@ -409,7 +421,7 @@
     =========================== */
     .cta-section {
       flex: 0 0 auto;
-      padding: 8px 12px 0;
+      padding: 8px 16px 0;
       text-align: center;
     }
     /* ── ここを編集：CTAキャプション ── */
@@ -417,7 +429,7 @@
       font-size: 11px;
       color: #888;
       letter-spacing: 0.08em;
-      margin-bottom: 7px;
+      margin-bottom: 6px;
     }
     .cta-btn {
       display: flex;
@@ -425,13 +437,13 @@
       justify-content: space-between;
       background: var(--green);
       color: var(--white);
-      border-radius: 50px;
-      padding: 15px 20px;
+      border-radius: 999px;
+      padding: 16px 22px;
       text-decoration: none;
       border: none;
       cursor: pointer;
       width: 100%;
-      box-shadow: 0 5px 20px rgba(6,199,85,0.36);
+      box-shadow: 0 8px 24px rgba(6,199,85,0.38);
       transition: transform .12s, box-shadow .12s;
       -webkit-tap-highlight-color: transparent;
     }
@@ -454,7 +466,7 @@
     .line-icon-wrap svg { width: 21px; height: 21px; }
     /* ── ここを編集：CTAボタンテキスト ── */
     .cta-text {
-      font-size: 17px;
+      font-size: clamp(18px, 4.8vw, 22px);
       font-weight: 900;
       letter-spacing: 0.01em;
     }
@@ -469,7 +481,17 @@
       text-align: center;
       font-size: 10px;
       color: #C0B8AE;
-      padding: 6px 16px 8px;
+      padding: 5px 16px 7px;
+    }
+
+    #page1 .header,
+    #page1 .hero,
+    #page1 .features,
+    #page1 .campaign-outer,
+    #page1 .access,
+    #page1 .cta-section,
+    #page1 .footer-note {
+      flex-shrink: 0;
     }
 
     @media (max-height: 700px) {
@@ -479,40 +501,40 @@
       .logo-wordmark .base { font-size: 23px; }
       .logo-wordmark .kana { font-size: 8px; margin-top: 1px; }
       .hero {
-        height: calc(100dvh - 42px - 82px - 108px - 27px - 56px - 12px);
-        min-height: 122px;
-        max-height: 180px;
+        height: 38vh;
+        min-height: 250px;
+        max-height: 320px;
       }
       .hero-body { padding: 10px 4px 0 14px; }
-      .hero-lead { font-size: 10px; line-height: 1.25; margin-bottom: 4px; }
-      .hero-headline { font-size: 32px; line-height: 0.98; }
+      .hero-lead { font-size: 11px; line-height: 1.25; margin-bottom: 4px; }
+      .hero-headline { font-size: clamp(37px, 11vw, 46px); line-height: 0.98; }
       .hero-rule { width: 34px; height: 2px; margin: 7px 0 6px; }
-      .hero-sub { font-size: 9.6px; line-height: 1.45; }
-      .features { gap: 8px; padding: 6px 12px 5px; }
+      .hero-sub { font-size: 10.5px; line-height: 1.45; }
+      .features { gap: 8px; margin-top: -26px; padding: 0 14px 7px; }
       .feat { gap: 4px; }
-      .feat-circle { width: 48px; height: 48px; }
+      .feat-circle { width: 62px; height: 62px; }
       .feat-circle svg { width: 22px; height: 22px; }
-      .feat-label { font-size: 9.3px; line-height: 1.25; }
-      .campaign-outer { padding: 0 10px; }
+      .feat-label { font-size: 10px; line-height: 1.25; }
+      .campaign-outer { padding: 0 12px; }
       .campaign-card { border-radius: 14px; }
       .campaign-tag { padding: 5px 12px 4px; }
       .campaign-tag-inner { padding: 2px 9px; }
-      .campaign-tag-inner span { font-size: 9.8px; }
+      .campaign-tag-inner span { font-size: 10.8px; }
       .campaign-col { padding: 7px 7px 8px; gap: 2px; }
-      .c-label { font-size: 10.5px; }
+      .c-label { font-size: 12px; }
       .c-badge { font-size: 9px; padding: 1px 8px; }
       .c-price,
-      .c-free { font-size: 38px; }
+      .c-free { font-size: 46px; }
       .c-free-unit { font-size: 20px; }
       .c-price-unit { font-size: 10px; }
-      .c-note { font-size: 9.8px; line-height: 1.35; }
+      .c-note { font-size: 10px; line-height: 1.35; }
       .access { gap: 10px; padding: 5px 12px 2px; }
       .access-item { font-size: 9.2px; gap: 3px; }
       .access-item svg { width: 17px; height: 17px; }
       .cta-section { padding: 5px 10px 0; }
       .cta-caption { font-size: 9px; margin-bottom: 4px; }
-      .cta-btn { padding: 10px 15px; }
-      .cta-text { font-size: 13px; }
+      .cta-btn { padding: 13px 18px; }
+      .cta-text { font-size: 15px; }
       .line-icon-wrap { width: 25px; height: 25px; }
       .line-icon-wrap svg { width: 18px; height: 18px; }
       .cta-arrow { font-size: 20px; }
@@ -2977,7 +2999,7 @@
       <!-- ── ここを編集：CTAキャプション ── -->
       <p class="cta-caption">＼ まずはお気軽にご相談ください ／</p>
       <!-- ── ここを編集：CTAボタン（href に LINE URL を設定） ── -->
-      <a href="https://lin.ee/97r7BRA" class="cta-btn">
+      <a href="https://lin.ee/97r7BRA" class="cta-btn" data-meta-lead="true">
         <div class="cta-left">
           <div class="line-icon-wrap">
             <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -3069,7 +3091,7 @@
     <p class="rp-footnote">※結果には個人差があります。効果を保証するものではありません。</p>
 
     <div class="rp-cta">
-      <a href="https://lin.ee/97r7BRA" class="rp-cta-btn">
+      <a href="https://lin.ee/97r7BRA" class="rp-cta-btn" data-meta-lead="true">
         <div class="cta-left">
           <div class="line-icon-wrap">
             <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -3552,10 +3574,7 @@
         </div>
       </div>
 
-      <a href="https://lin.ee/97r7BRA" class="flow-light-cta">
-        <strong>流れが分かったら、<br>まずは日程相談へ</strong>
-        <span>LINEで相談</span>
-      </a>
+      <p class="flow-note-copy">流れはシンプル。まずはLINEで希望日時を送るだけ。</p>
 
     </section>
   </section>
@@ -3625,24 +3644,7 @@
         </article>
       </div>
 
-      <div class="faq-consult">
-        <div class="faq-consult-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24">
-            <path d="M4 12a8 8 0 0 1 16 0"/>
-            <path d="M4 12v4a2 2 0 0 0 2 2h2v-6H4z"/>
-            <path d="M20 12v4a2 2 0 0 1-2 2h-2v-6h4z"/>
-            <path d="M14 20h-3"/>
-          </svg>
-        </div>
-        <div>
-          <p class="faq-consult-title">その他のご不安も<span class="faq-consult-highlight">お気軽にご相談</span>ください！</p>
-          <p class="faq-consult-body">あなたの不安を解消し、理想のカラダを一緒に目指します。</p>
-        </div>
-      </div>
-
-      <div class="faq-photo-wrap">
-        <img src="training-support.jpg" alt="パーソナルトレーニングの様子" class="faq-photo">
-      </div>
+      <p class="faq-next-copy">不安が解消できたら、<span>次にコース内容をご確認ください。</span></p>
 
     </section>
   </section>
@@ -3756,7 +3758,7 @@
           </ul>
         </div>
         <p class="cp-cta-caption">無理な勧誘は一切ありません。お気軽にご相談ください！</p>
-        <a href="https://lin.ee/97r7BRA" class="cp-cta-btn">
+        <a href="https://lin.ee/97r7BRA" class="cp-cta-btn" data-meta-lead="true">
           <span class="cp-line-icon">
             <svg viewBox="0 0 24 24" fill="white"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
           </span>
@@ -3788,7 +3790,7 @@
           <p class="final-price-label">体験トレーニング<br>60分 特別価格</p>
           <p class="final-price">2,200<small>円（税込）</small></p>
         </div>
-        <a href="https://lin.ee/97r7BRA" class="final-line-btn">
+        <a href="https://lin.ee/97r7BRA" class="final-line-btn" data-meta-lead="true">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
           </svg>
@@ -3814,6 +3816,17 @@
 </main>
 
 <script>
+  const metaLeadTrackedButtons = new WeakSet();
+  document.querySelectorAll('[data-meta-lead="true"]').forEach((button) => {
+    button.addEventListener('click', () => {
+      if (metaLeadTrackedButtons.has(button)) return;
+      metaLeadTrackedButtons.add(button);
+      if (typeof window.fbq === 'function') {
+        window.fbq('track', 'Lead');
+      }
+    });
+  });
+
   const wrap = document.querySelector('.reasons-wrap');
   const cards = document.querySelectorAll('.rs-card');
   const observer = new IntersectionObserver((entries) => {
