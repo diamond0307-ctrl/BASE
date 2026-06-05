@@ -758,7 +758,7 @@
     /* PAGE3 CTA */
     .rp-cta {
       flex-shrink: 0;
-      margin-top: 8px;
+      margin-top: 7px;
     }
     .rp-cta-btn {
       display: flex;
@@ -773,8 +773,15 @@
       box-shadow: 0 4px 16px rgba(6,199,85,0.36);
     }
     .rp-cta-btn .cta-left { display: flex; align-items: center; gap: 9px; }
-    .rp-cta-btn .cta-text { font-size: 16px; font-weight: 900; }
+    .rp-cta-btn .cta-text { font-size: 14px; font-weight: 900; }
     .rp-cta-btn .cta-arrow { font-size: 22px; font-weight: 900; }
+    #page2 .rp-cta-btn {
+      padding: 10px 16px;
+      box-shadow: 0 3px 12px rgba(6,199,85,0.24);
+    }
+    #page2 .rp-cta-btn .cta-text {
+      font-size: 13px;
+    }
 
     /* ===========================
        お客様の声  ─  3件レビュー
@@ -1546,6 +1553,20 @@
     .faq-consult-highlight {
       background: linear-gradient(transparent 58%, rgba(246,184,0,0.48) 58%);
     }
+    .faq-photo-wrap {
+      flex-shrink: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      flex: 1;
+      min-height: 0;
+    }
+    .faq-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
     @media (hover: hover) and (pointer: fine) {
       .faq-card:hover {
         box-shadow: 0 9px 24px rgba(6,26,68,0.13);
@@ -1565,6 +1586,888 @@
       .faq-consult-icon { width: 32px; height: 32px; }
       .faq-consult-title { font-size: 11.5px; }
       .faq-consult-body { font-size: 9px; }
+    }
+
+    /* ===========================
+       ご入会までの流れ
+    =========================== */
+    #page-flow {
+      background: #F7F8FA;
+      overflow: hidden;
+    }
+    .flow-section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 10px 14px 10px;
+      gap: 6px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .flow-section.flow-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .flow-head {
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .flow-kicker {
+      font-size: 9.5px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      color: #061A44;
+      line-height: 1.25;
+      margin-bottom: 3px;
+    }
+    .flow-kicker span {
+      color: #F6B800;
+    }
+    .flow-title {
+      font-size: 25px;
+      font-weight: 900;
+      line-height: 1.12;
+      letter-spacing: 0.02em;
+      color: #061A44;
+    }
+    .flow-title-line {
+      width: 74px;
+      height: 3px;
+      background: #F6B800;
+      border-radius: 999px;
+      margin: 5px auto 4px;
+    }
+    .flow-lead {
+      font-size: 10px;
+      font-weight: 700;
+      color: #334155;
+      line-height: 1.42;
+    }
+    .flow-steps {
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .flow-step {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      align-items: stretch;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      box-shadow: 0 4px 13px rgba(6,26,68,0.06);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .flow-step.flow-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .flow-step-no {
+      background: #061A44;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      padding: 7px 8px;
+      color: #FFFFFF;
+    }
+    .flow-step-label {
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+    }
+    .flow-step-num {
+      font-size: 25px;
+      font-weight: 900;
+      color: #F6B800;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .flow-step-icon {
+      width: 24px;
+      height: 24px;
+      margin-top: 2px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .flow-step-icon svg {
+      width: 15px;
+      height: 15px;
+      stroke: #FFFFFF;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .flow-step-body {
+      padding: 9px 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-width: 0;
+    }
+    .flow-step-title {
+      font-size: 14px;
+      font-weight: 900;
+      color: #061A44;
+      line-height: 1.25;
+    }
+    .flow-step-title small {
+      font-size: 9px;
+      font-weight: 900;
+      color: #64748B;
+    }
+    .flow-step-text {
+      margin-top: 3px;
+      font-size: 10px;
+      font-weight: 600;
+      color: #334155;
+      line-height: 1.42;
+    }
+    .flow-chip {
+      width: fit-content;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: 5px;
+      background: #FFF9E8;
+      border: 1px solid rgba(246,184,0,0.38);
+      border-radius: 999px;
+      padding: 3px 7px;
+      font-size: 8.5px;
+      font-weight: 900;
+      color: #061A44;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .flow-chip::before {
+      content: "✓";
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #F6B800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 9px;
+      font-weight: 900;
+      color: #061A44;
+      flex-shrink: 0;
+    }
+    .flow-arrow {
+      width: 12px;
+      height: 12px;
+      margin: -3px auto;
+      color: #F6B800;
+      flex-shrink: 0;
+      opacity: 0.95;
+    }
+    .flow-arrow svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+      display: block;
+    }
+    .flow-points {
+      flex-shrink: 0;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 7px 10px 8px;
+      box-shadow: 0 4px 14px rgba(6,26,68,0.05);
+    }
+    .flow-points-title {
+      text-align: center;
+      font-size: 11.5px;
+      font-weight: 900;
+      color: #061A44;
+      line-height: 1.2;
+      margin-bottom: 6px;
+    }
+    .flow-point-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+    }
+    .flow-point {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFF9E8;
+      border: 1px solid rgba(246,184,0,0.38);
+      border-radius: 999px;
+      padding: 6px 9px;
+      font-size: 10px;
+      font-weight: 900;
+      color: #061A44;
+      line-height: 1.2;
+      white-space: nowrap;
+    }
+    .flow-point-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: #F6B800;
+      color: #061A44;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+    .flow-cta-spacer {
+      flex: 1;
+      min-height: 8px;
+    }
+    .flow-light-cta {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      background: #061A44;
+      color: #FFFFFF;
+      border-radius: 14px;
+      padding: 9px 11px;
+      text-decoration: none;
+      box-shadow: 0 5px 14px rgba(6,26,68,0.18);
+    }
+    .flow-light-cta strong {
+      display: block;
+      font-size: 11.5px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+    .flow-light-cta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: #06C755;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    @media (max-height: 780px) {
+      .flow-section { padding: 12px 12px 10px; gap: 7px; }
+      .flow-kicker { font-size: 9px; margin-bottom: 2px; }
+      .flow-title { font-size: 22px; }
+      .flow-title-line { margin: 5px auto 4px; }
+      .flow-lead { font-size: 10px; line-height: 1.45; }
+      .flow-steps { gap: 4px; }
+      .flow-step { grid-template-columns: 62px 1fr; }
+      .flow-step-no { padding: 8px 6px; }
+      .flow-step-num { font-size: 24px; }
+      .flow-step-icon { width: 24px; height: 24px; }
+      .flow-step-body { padding: 8px 7px 8px 9px; }
+      .flow-step-title { font-size: 14px; }
+      .flow-step-text { font-size: 10px; line-height: 1.42; margin-top: 4px; }
+      .flow-chip { font-size: 8px; padding: 3px 6px; margin-top: 5px; }
+      .flow-chip::before { width: 12px; height: 12px; font-size: 8px; }
+      .flow-arrow { width: 10px; height: 10px; margin: -4px auto; }
+      .flow-points { padding: 8px 9px; }
+      .flow-points-title { font-size: 11px; margin-bottom: 6px; }
+      .flow-point { font-size: 9.5px; padding: 5px 8px; }
+      .flow-light-cta { padding: 8px 10px; }
+      .flow-light-cta strong { font-size: 10.5px; }
+      .flow-light-cta span { font-size: 10px; padding: 7px 10px; }
+    }
+
+    /* ===========================
+       あなたを支えるサポートチーム
+    =========================== */
+    #page-team {
+      height: 100vh;
+      background: #F7F8FA;
+      overflow: hidden;
+    }
+    .team-section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      padding: 8px 10px 9px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .team-section.team-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .team-hero {
+      flex-shrink: 0;
+      display: grid;
+      grid-template-columns: 1fr 92px;
+      gap: 8px;
+      align-items: center;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
+      padding: 9px;
+      box-shadow: 0 4px 14px rgba(6,26,68,0.06);
+      overflow: hidden;
+    }
+    .team-kicker {
+      font-size: 8.8px;
+      font-weight: 900;
+      color: #061A44;
+      line-height: 1.35;
+      letter-spacing: 0.02em;
+    }
+    .team-title {
+      margin-top: 3px;
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.02;
+      color: #061A44;
+      letter-spacing: 0;
+    }
+    .team-title-accent {
+      display: block;
+      color: #F6B800;
+      font-size: 25px;
+    }
+    .team-lead {
+      margin-top: 5px;
+      font-size: 9.2px;
+      font-weight: 700;
+      color: #24324A;
+      line-height: 1.42;
+    }
+    .team-green {
+      color: #1F8F4E;
+      font-weight: 900;
+    }
+    .team-hero-photo {
+      position: relative;
+      min-height: 74px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #E5E7EB;
+    }
+    .team-hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    .team-logo-text {
+      position: absolute;
+      right: 7px;
+      top: 7px;
+      background: rgba(255,255,255,0.86);
+      color: #061A44;
+      border-radius: 6px;
+      padding: 4px 6px;
+      font-size: 8.2px;
+      font-weight: 900;
+      line-height: 1.1;
+      letter-spacing: 0.08em;
+      text-align: right;
+    }
+    .team-staff-grid {
+      flex-shrink: 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .team-card {
+      min-width: 0;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(6,26,68,0.08);
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .team-card.team-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .team-photo {
+      position: relative;
+      width: 100%;
+      height: 122px;
+      overflow: hidden;
+      background: #F1F5F9;
+      border-bottom: 1px solid #E5E7EB;
+    }
+    .team-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0) 58%, rgba(6,26,68,0.12) 100%);
+      pointer-events: none;
+    }
+    .team-photo img,
+    .team-placeholder svg {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      transform: scale(1.03);
+      transition: transform 0.75s ease-out;
+    }
+    .team-card.team-visible .team-photo img,
+    .team-card.team-visible .team-placeholder svg {
+      transform: scale(1);
+    }
+    .team-role {
+      display: inline-flex;
+      width: fit-content;
+      background: #061A44;
+      color: #FFFFFF;
+      border-radius: 999px;
+      padding: 3px 7px;
+      font-size: 8.4px;
+      font-weight: 900;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .team-role-food {
+      background: #D94D78;
+    }
+    .team-name {
+      margin-top: 5px;
+      font-size: 14.4px;
+      font-weight: 900;
+      color: #061A44;
+      line-height: 1.1;
+    }
+    .team-roman {
+      margin-top: 2px;
+      font-size: 8.4px;
+      font-weight: 700;
+      color: #475569;
+      line-height: 1.1;
+    }
+    .team-card-body {
+      padding: 7px 8px 8px;
+    }
+    .team-mini-label {
+      display: inline-flex;
+      align-items: center;
+      background: #F6B800;
+      color: #061A44;
+      border-radius: 4px;
+      padding: 2px 5px 2px;
+      font-size: 8.4px;
+      font-weight: 900;
+      line-height: 1;
+      margin-right: 4px;
+    }
+    .team-specialty {
+      margin-top: 5px;
+      min-height: 22px;
+      font-size: 8.4px;
+      font-weight: 900;
+      color: #061A44;
+      line-height: 1.32;
+    }
+    .team-comment {
+      margin-top: 5px;
+      font-size: 8.4px;
+      font-weight: 700;
+      color: #24324A;
+      line-height: 1.38;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .team-support {
+      flex-shrink: 0;
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 12px;
+      padding: 6px 7px;
+      box-shadow: 0 3px 12px rgba(6,26,68,0.05);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .team-support.team-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .team-support-title {
+      text-align: center;
+      color: #061A44;
+      font-size: 10.2px;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 5px;
+    }
+    .team-support-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 4px;
+    }
+    .team-support-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      text-align: center;
+      padding: 5px 2px;
+      min-width: 0;
+      border: 1px solid rgba(6,26,68,0.1);
+      border-radius: 999px;
+      background: #F7F8FA;
+    }
+    .team-support-item + .team-support-item {
+      border-left: 1px solid rgba(6,26,68,0.1);
+    }
+    .team-support-icon {
+      flex: 0 0 auto;
+      width: 15px;
+      height: 15px;
+      margin: 0;
+      border-radius: 50%;
+      background: #061A44;
+      color: #F6B800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .team-support-icon svg {
+      width: 9px;
+      height: 9px;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .team-support-h {
+      font-size: 8.5px;
+      font-weight: 900;
+      color: #061A44;
+      line-height: 1.15;
+    }
+    .team-support-p {
+      display: none;
+    }
+    .team-message {
+      flex-shrink: 0;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      background: #FFF9E8;
+      border: 1px solid rgba(246,184,0,0.58);
+      border-radius: 12px;
+      padding: 8px 10px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .team-message.team-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .team-message-icon {
+      flex: 0 0 auto;
+      width: 28px;
+      height: 28px;
+      color: #F6B800;
+    }
+    .team-message-icon svg {
+      width: 100%;
+      height: 100%;
+      fill: currentColor;
+    }
+    .team-message-text {
+      font-size: 11.5px;
+      font-weight: 900;
+      line-height: 1.32;
+      color: #061A44;
+    }
+    .team-cta {
+      flex-shrink: 0;
+      display: grid;
+      grid-template-columns: 1fr 132px;
+      gap: 7px;
+      align-items: center;
+      background: #061A44;
+      color: #FFFFFF;
+      border-radius: 13px;
+      padding: 8px 9px;
+      box-shadow: 0 7px 18px rgba(6,26,68,0.18);
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .team-cta.team-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .team-cta-copy {
+      font-size: 10.2px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+    .team-price-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.16);
+      border-radius: 4px;
+      padding: 2px 6px;
+      margin-top: 5px;
+      font-size: 8.4px;
+      font-weight: 900;
+    }
+    .team-price {
+      margin-top: 2px;
+      color: #F6B800;
+      font-size: 23px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+    .team-price small {
+      font-size: 10px;
+      color: #FFFFFF;
+      letter-spacing: 0;
+    }
+    .team-line-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      min-height: 42px;
+      background: #06C755;
+      color: #FFFFFF;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 11.5px;
+      font-weight: 900;
+      box-shadow: 0 5px 13px rgba(6,199,85,0.28);
+    }
+    .team-line-btn span {
+      display: block;
+      font-size: 8.4px;
+      font-weight: 800;
+      opacity: 0.92;
+      line-height: 1.3;
+    }
+    .team-cta-notes {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      border-top: 1px solid rgba(255,255,255,0.18);
+      padding-top: 5px;
+      margin-top: 1px;
+      font-size: 8.2px;
+      font-weight: 800;
+      text-align: center;
+      color: rgba(255,255,255,0.9);
+    }
+    .team-cta-notes span + span {
+      border-left: 1px solid rgba(255,255,255,0.18);
+    }
+    @media (max-height: 860px) {
+      .team-section { gap: 5px; padding: 6px 9px 7px; }
+      .team-hero { grid-template-columns: 1fr 82px; padding: 7px; border-radius: 14px; }
+      .team-kicker { font-size: 8.4px; }
+      .team-title { font-size: 19px; }
+      .team-title-accent { font-size: 22px; }
+      .team-lead { font-size: 8.2px; line-height: 1.34; margin-top: 4px; }
+      .team-hero-photo { min-height: 62px; }
+      .team-logo-text { display: none; }
+      .team-staff-grid { gap: 6px; }
+      .team-photo { height: 106px; }
+      .team-card-body { padding: 6px 7px 7px; }
+      .team-name { font-size: 12.4px; }
+      .team-roman { font-size: 8.2px; }
+      .team-role { font-size: 8.2px; padding: 2px 6px; }
+      .team-mini-label { font-size: 8.2px; padding: 2px 4px; }
+      .team-specialty { font-size: 8.2px; min-height: 19px; margin-top: 4px; }
+      .team-comment { font-size: 8.2px; line-height: 1.25; margin-top: 3px; }
+      .team-support { padding: 5px 6px; }
+      .team-support-title { font-size: 9.5px; margin-bottom: 4px; }
+      .team-support-item { padding: 4px 1px; gap: 2px; }
+      .team-support-icon { width: 13px; height: 13px; }
+      .team-support-h { font-size: 8.2px; }
+      .team-message { padding: 6px 8px; }
+      .team-message-icon { width: 22px; height: 22px; }
+      .team-message-text { font-size: 10px; }
+      .team-cta { grid-template-columns: 1fr 126px; padding: 8px 9px; }
+      .team-cta-copy { font-size: 9.4px; }
+      .team-price { font-size: 20px; }
+      .team-line-btn { min-height: 38px; font-size: 10.5px; }
+      .team-cta-notes { display: none; }
+    }
+
+    /* ===========================
+       FINAL CTA  ─  LINE予約
+    =========================== */
+    #page-final-cta {
+      height: 100vh;
+      overflow: hidden;
+      background: linear-gradient(180deg, #F7F8FA 0%, #FFFFFF 100%);
+    }
+    .final-cta-section {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 14px;
+      padding: 18px 16px 20px;
+      overflow: hidden;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .final-cta-section.final-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .final-cta-card {
+      background: #061A44;
+      color: #FFFFFF;
+      border-radius: 22px;
+      padding: 22px 18px 18px;
+      box-shadow: 0 16px 34px rgba(6,26,68,0.22);
+      text-align: center;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .final-cta-kicker {
+      color: #F6B800;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.3;
+      letter-spacing: 0.04em;
+    }
+    .final-cta-title {
+      margin-top: 8px;
+      font-size: 27px;
+      font-weight: 900;
+      line-height: 1.18;
+      letter-spacing: 0;
+    }
+    .final-cta-title span {
+      color: #F6B800;
+    }
+    .final-cta-copy {
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 700;
+      line-height: 1.6;
+      color: rgba(255,255,255,0.9);
+    }
+    .final-price-box {
+      margin-top: 16px;
+      background: #FFFFFF;
+      color: #061A44;
+      border-radius: 16px;
+      padding: 13px 12px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: center;
+      text-align: left;
+    }
+    .final-price-label {
+      font-size: 11px;
+      font-weight: 900;
+      line-height: 1.35;
+    }
+    .final-price {
+      color: #D94444;
+      font-size: 32px;
+      font-weight: 900;
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+    .final-price small {
+      font-size: 11px;
+      color: #061A44;
+      letter-spacing: 0;
+    }
+    .final-line-btn {
+      margin-top: 14px;
+      min-height: 62px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: #06C755;
+      color: #FFFFFF;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 900;
+      box-shadow: 0 10px 22px rgba(6,199,85,0.32);
+    }
+    .final-line-btn svg {
+      width: 25px;
+      height: 25px;
+      fill: currentColor;
+      flex-shrink: 0;
+    }
+    .final-line-btn small {
+      display: block;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.2;
+      opacity: 0.92;
+    }
+    .final-points {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+    }
+    .final-point {
+      background: #FFFFFF;
+      border: 1px solid #E5E7EB;
+      border-radius: 999px;
+      padding: 9px 8px;
+      color: #061A44;
+      font-size: 10px;
+      font-weight: 900;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(6,26,68,0.06);
+    }
+    .final-close-copy {
+      text-align: center;
+      color: #061A44;
+      font-size: 12px;
+      font-weight: 900;
+      line-height: 1.55;
+    }
+    .final-close-copy span {
+      color: #F6B800;
+    }
+    @media (max-height: 820px) {
+      .final-cta-section { gap: 10px; padding: 14px 14px 16px; }
+      .final-cta-card { padding: 18px 15px 15px; border-radius: 19px; }
+      .final-cta-title { font-size: 24px; }
+      .final-cta-copy { font-size: 11px; line-height: 1.5; margin-top: 8px; }
+      .final-price-box { margin-top: 12px; padding: 11px 10px; }
+      .final-price { font-size: 29px; }
+      .final-line-btn { min-height: 56px; font-size: 16px; margin-top: 12px; }
+      .final-point { font-size: 9.5px; padding: 8px 6px; }
+      .final-close-copy { font-size: 11px; }
     }
 
     /* ===========================
@@ -2012,85 +2915,6 @@
 
     <p class="rp-footnote">※結果には個人差があります。効果を保証するものではありません。</p>
 
-  </div>
-  <!-- /PAGE 2 -->
-
-  <!-- =====================================================
-       PAGE 3  ─  実際の結果②（-6.1kg）+ 声 + 実績
-  ===================================================== -->
-  <div class="page" id="page3">
-
-    <div class="rp-case-card">
-      <div class="rp-case-top">
-        <div class="rp-case-badge" style="background:#EAF0FF;">
-          <span class="rp-badge-gender" style="background:#3A6FD8;">男性</span>
-          <span class="rp-badge-text" style="color:#3A6FD8;">会員様の結果</span>
-        </div>
-        <div class="rp-case-kg-wrap">
-          <span class="rp-case-period">3ヶ月で</span>
-          <span class="rp-case-kg">-6.1<small>kg</small></span>
-        </div>
-        <p class="rp-case-note">※トレーニング期間：3ヶ月</p>
-      </div>
-      <img src="result-2.jpg" alt="BEFORE AFTER" class="rp-photo-collage">
-      <div class="rp-stat-row">
-        <div class="rp-stat-col">
-          <div class="rp-stat-head">
-            <svg viewBox="0 0 20 20" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><circle cx="10" cy="6" r="3.5"/><path d="M3 18c0-3.866 3.134-7 7-7s7 3.134 7 7"/></svg>
-            <span class="rp-stat-title">体脂肪率</span>
-          </div>
-          <div class="rp-stat-value">22.5% → <strong>16.2%</strong></div>
-        </div>
-        <div class="rp-stat-col">
-          <div class="rp-stat-head">
-            <svg viewBox="0 0 20 20" fill="none" stroke="#888" stroke-width="1.5" stroke-linecap="round"><ellipse cx="10" cy="10" rx="7" ry="4.5"/><line x1="3" y1="10" x2="3" y2="14"/><line x1="17" y1="10" x2="17" y2="14"/><path d="M3 14c0 2.485 3.134 4.5 7 4.5s7-2.015 7-4.5"/></svg>
-            <span class="rp-stat-title">ウエスト</span>
-          </div>
-          <div class="rp-stat-value">82.0cm → <strong>73.0cm</strong></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 男性お客様の声 -->
-    <div class="rp-voice-card">
-      <div class="rp-voice-inner">
-        <div class="rp-voice-avatar-col">
-          <div class="rp-voice-script">Voice</div>
-          <div class="rp-voice-avatar-circle" style="background:#C8D8F0;">
-            <svg viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="14" r="7.5" fill="#3A6FD8" opacity="0.75"/>
-              <rect x="11" y="26" width="22" height="16" rx="6" fill="#3A6FD8" opacity="0.75"/>
-            </svg>
-          </div>
-          <div class="rp-voice-label" style="background:#B3C8F5;color:#1A4AAA;">20代 男性</div>
-        </div>
-        <div class="rp-voice-content">
-          <div class="rp-voice-stars">★★★★★</div>
-          <p class="rp-voice-headline">見た目が変わって<br>周りからも褒められました！</p>
-          <p class="rp-voice-text">運動習慣がなかった自分でも、トレーナーさんが丁寧にサポートしてくれたので楽しく続けられました。自分に自信が持てるようになりました。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- 3カラム実績 -->
-    <div class="rp-metrics">
-      <div class="rp-metric-col">
-        <div class="rp-metric-num">300<small>名以上</small></div>
-        <div class="rp-metric-label">累計指導実績</div>
-      </div>
-      <div class="rp-metric-col">
-        <div class="rp-metric-num">90<small>%</small></div>
-        <div class="rp-metric-label">継続率</div>
-      </div>
-      <div class="rp-metric-col" style="align-items:flex-start;padding-left:10px;">
-        <ul class="rp-metric-list">
-          <li>一人ひとりに合わせたトレーニング</li>
-          <li>食事サポート</li>
-          <li>資格保有者在籍</li>
-        </ul>
-      </div>
-    </div>
-
     <div class="rp-cta">
       <a href="#" class="rp-cta-btn">
         <div class="cta-left">
@@ -2099,16 +2923,14 @@
               <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
             </svg>
           </div>
-          <span class="cta-text">無料カウンセリングを予約する</span>
+          <span class="cta-text">まずはLINEで相談する</span>
         </div>
         <span class="cta-arrow">›</span>
       </a>
     </div>
 
-    <p class="rp-footnote">※結果には個人差があります。効果を保証するものではありません。</p>
-
   </div>
-  <!-- /PAGE 3 -->
+  <!-- /PAGE 2 -->
 
   <!-- =====================================================
        お客様の声  ─  3件レビュー
@@ -2369,6 +3191,264 @@
   <!-- /PAGE 4 -->
 
   <!-- =====================================================
+       あなたを支えるサポートチーム
+  ===================================================== -->
+  <div class="page" id="page-team">
+    <section class="team-section" aria-labelledby="team-title">
+
+      <div class="team-hero">
+        <div>
+          <p class="team-kicker">理想のカラダは、信頼できるチームと一緒に。</p>
+          <h2 class="team-title" id="team-title">あなたを支える<span class="team-title-accent">サポートチーム</span></h2>
+          <p class="team-lead">トレーナーと食事指導スタッフが連携し、3ヶ月間あなたを<span class="team-green">サポート</span>します。</p>
+        </div>
+        <div class="team-hero-photo">
+          <img src="gym.jpg" alt="BASEのジム内観">
+          <div class="team-logo-text">BASE<br>PERSONAL TRAINING GYM</div>
+        </div>
+      </div>
+
+      <div class="team-staff-grid">
+        <article class="team-card">
+          <div class="team-card-top">
+            <div class="team-photo">
+              <img src="trainer1.jpg" alt="松冨 知樹">
+            </div>
+          </div>
+          <div class="team-card-body">
+            <div class="team-card-head">
+              <span class="team-role">トレーナー</span>
+              <h3 class="team-name">松冨 知樹</h3>
+              <p class="team-roman">Tomoki Matsudomi</p>
+            </div>
+            <p class="team-specialty"><span class="team-mini-label">得意</span>女性のボディメイク</p>
+            <p class="team-comment">初心者にも寄り添い、楽しく続く身体づくりを支えます。</p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card-top">
+            <div class="team-photo">
+              <img src="trainer2.jpg" alt="岩坪 雄介">
+            </div>
+          </div>
+          <div class="team-card-body">
+            <div class="team-card-head">
+              <span class="team-role">トレーナー</span>
+              <h3 class="team-name">岩坪 雄介</h3>
+              <p class="team-roman">Yusuke Iwatsubo</p>
+            </div>
+            <p class="team-specialty"><span class="team-mini-label">得意</span>体幹トレーニング / ヒップアップ</p>
+            <p class="team-comment">身体に合わせて、分かりやすく丁寧に指導します。</p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card-top">
+            <div class="team-photo team-placeholder">
+              <svg viewBox="0 0 80 80" aria-hidden="true">
+                <rect width="80" height="80" fill="#F1F5F9"/>
+                <circle cx="40" cy="28" r="15" fill="#061A44"/>
+                <path d="M14 80c2-21 15-35 26-35s24 14 26 35" fill="#DDE7F2"/>
+                <path d="M19 62h42" stroke="#F6B800" stroke-width="5" stroke-linecap="round"/>
+              </svg>
+            </div>
+          </div>
+          <div class="team-card-body">
+            <div class="team-card-head">
+              <span class="team-role">トレーナー</span>
+              <h3 class="team-name">松尾 優哉</h3>
+              <p class="team-roman">Yuya Matsuo</p>
+            </div>
+            <p class="team-specialty"><span class="team-mini-label">得意</span>減量 / 食事アドバイス</p>
+            <p class="team-comment">正しい方法で、無理なく結果につなげます。</p>
+          </div>
+        </article>
+
+        <article class="team-card">
+          <div class="team-card-top">
+            <div class="team-photo">
+              <img src="staff1.jpg" alt="柳川 希">
+            </div>
+          </div>
+          <div class="team-card-body">
+            <div class="team-card-head">
+              <span class="team-role team-role-food">食事指導スタッフ</span>
+              <h3 class="team-name">柳川 希</h3>
+              <p class="team-roman">Nozomi Yanagawa</p>
+            </div>
+            <p class="team-specialty"><span class="team-mini-label">得意</span>我慢ゼロの食事改善</p>
+            <p class="team-comment">続けられる食習慣づくりをサポートします。</p>
+          </div>
+        </article>
+      </div>
+
+      <div class="team-support">
+        <h3 class="team-support-title">BASEのサポート体制</h3>
+        <div class="team-support-grid">
+          <div class="team-support-item">
+            <div class="team-support-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 12h14M3 9v6M21 9v6M8 8v8M16 8v8"/></svg>
+            </div>
+            <p class="team-support-h">トレーニング</p>
+            <p class="team-support-p">目標や体力に合わせたメニュー</p>
+          </div>
+          <div class="team-support-item">
+            <div class="team-support-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M7 3v18M12 3v18M17 4v17M7 9h10"/></svg>
+            </div>
+            <p class="team-support-h">食事サポート</p>
+            <p class="team-support-p">LINEで毎日の食事を支える</p>
+          </div>
+          <div class="team-support-item">
+            <div class="team-support-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="11" r="2"/></svg>
+            </div>
+            <p class="team-support-h">オンライン相談</p>
+            <p class="team-support-p">不安や疑問を気軽に相談OK</p>
+          </div>
+          <div class="team-support-item">
+            <div class="team-support-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="17" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M13 14h3M8 18h3"/></svg>
+            </div>
+            <p class="team-support-h">3ヶ月伴走</p>
+            <p class="team-support-p">チームで最後までサポート</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="team-message">
+        <div class="team-message-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40">
+            <circle cx="10" cy="9" r="5"/><circle cx="20" cy="8" r="6"/><circle cx="30" cy="9" r="5"/>
+            <rect x="5" y="17" width="10" height="17" rx="5"/><rect x="14" y="16" width="12" height="19" rx="6"/><rect x="25" y="17" width="10" height="17" rx="5"/>
+          </svg>
+        </div>
+        <p class="team-message-text">一人ではなく、<span class="cv-yellow">チームで支える</span>から続けられる。</p>
+      </div>
+
+    </section>
+  </div>
+  <!-- /サポートチーム -->
+
+  <!-- =====================================================
+       ご入会までの流れ
+  ===================================================== -->
+  <div class="page" id="page-flow">
+    <section class="flow-section" aria-labelledby="flow-title">
+
+      <div class="flow-head">
+        <p class="flow-kicker">＼ 初めての方でも安心！無理な勧誘は<span>一切ありません</span> ／</p>
+        <h2 class="flow-title" id="flow-title">ご入会までの流れ</h2>
+        <div class="flow-title-line"></div>
+        <p class="flow-lead">LINE予約から体験、スタートまで。<br>初めての方でも安心して進められます。</p>
+      </div>
+
+      <div class="flow-steps">
+        <article class="flow-step">
+          <div class="flow-step-no">
+            <span class="flow-step-label">STEP</span>
+            <span class="flow-step-num">01</span>
+            <span class="flow-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="7" y="3" width="10" height="18" rx="2"/><path d="M10 18h4"/><path d="M16 8h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1l-2 2v-2"/></svg>
+            </span>
+          </div>
+          <div class="flow-step-body">
+            <h3 class="flow-step-title">LINEで予約</h3>
+            <p class="flow-step-text">希望日時を送るだけでOK。<br>24時間いつでも受付。</p>
+            <span class="flow-chip">希望日時を送信</span>
+          </div>
+        </article>
+
+        <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 18 5 9h14z"/></svg></div>
+
+        <article class="flow-step">
+          <div class="flow-step-no">
+            <span class="flow-step-label">STEP</span>
+            <span class="flow-step-num">02</span>
+            <span class="flow-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="11" r="2.5"/><path d="M8 15c1-2 7-2 8 0"/></svg>
+            </span>
+          </div>
+          <div class="flow-step-body">
+            <h3 class="flow-step-title">オンライン相談 <small>約20〜30分</small></h3>
+            <p class="flow-step-text">目標や不安を事前にヒアリング。<br>無理な勧誘はありません。</p>
+            <span class="flow-chip">ご自宅でOK</span>
+          </div>
+        </article>
+
+        <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 18 5 9h14z"/></svg></div>
+
+        <article class="flow-step">
+          <div class="flow-step-no">
+            <span class="flow-step-label">STEP</span>
+            <span class="flow-step-num">03</span>
+            <span class="flow-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M3 9v6M21 9v6M8 8v8M16 8v8"/></svg>
+            </span>
+          </div>
+          <div class="flow-step-body">
+            <h3 class="flow-step-title">体験トレーニング <small>約60分</small></h3>
+            <p class="flow-step-text">実際に体を動かして、<br>自分に合うか確認できます。</p>
+            <span class="flow-chip">手ぶらOK</span>
+          </div>
+        </article>
+
+        <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 18 5 9h14z"/></svg></div>
+
+        <article class="flow-step">
+          <div class="flow-step-no">
+            <span class="flow-step-label">STEP</span>
+            <span class="flow-step-num">04</span>
+            <span class="flow-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 8h6M9 12h6M9 16h4"/><path d="M16 3v4M8 3v4"/></svg>
+            </span>
+          </div>
+          <div class="flow-step-body">
+            <h3 class="flow-step-title">プラン説明 <small>約20〜30分</small></h3>
+            <p class="flow-step-text">体験内容や目標に合わせて、<br>最適なプランをご提案します。</p>
+            <span class="flow-chip">不安は相談OK</span>
+          </div>
+        </article>
+
+        <div class="flow-arrow" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 18 5 9h14z"/></svg></div>
+
+        <article class="flow-step">
+          <div class="flow-step-no">
+            <span class="flow-step-label">STEP</span>
+            <span class="flow-step-num">05</span>
+            <span class="flow-step-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l2.4 5.3L20 10l-4.4 3.8L16.8 20 12 16.8 7.2 20l1.2-6.2L4 10l5.6-1.7z"/></svg>
+            </span>
+          </div>
+          <div class="flow-step-body">
+            <h3 class="flow-step-title">ご検討・スタート</h3>
+            <p class="flow-step-text">その場で決めなくてもOK。<br>納得できたら一緒に始めます。</p>
+            <span class="flow-chip">その場の入会不要</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="flow-points">
+        <h3 class="flow-points-title">安心ポイント</h3>
+        <div class="flow-point-grid">
+          <div class="flow-point"><span class="flow-point-dot">✓</span>無理な勧誘なし</div>
+          <div class="flow-point"><span class="flow-point-dot">✓</span>手ぶらOK</div>
+          <div class="flow-point"><span class="flow-point-dot">✓</span>初心者歓迎</div>
+          <div class="flow-point"><span class="flow-point-dot">✓</span>2店舗から選べる</div>
+        </div>
+      </div>
+
+      <a href="#" class="flow-light-cta">
+        <strong>流れが分かったら、<br>まずは日程相談へ</strong>
+        <span>LINEで相談</span>
+      </a>
+
+    </section>
+  </div>
+  <!-- /ご入会までの流れ -->
+
+  <!-- =====================================================
        PAGE 5  ─  よくある不安と答え
   ===================================================== -->
   <div class="page" id="page5">
@@ -2445,6 +3525,10 @@
           <p class="faq-consult-title">その他のご不安も<span class="faq-consult-highlight">お気軽にご相談</span>ください！</p>
           <p class="faq-consult-body">あなたの不安を解消し、理想のカラダを一緒に目指します。</p>
         </div>
+      </div>
+
+      <div class="faq-photo-wrap">
+        <img src="training-support.jpg" alt="パーソナルトレーニングの様子" class="faq-photo">
       </div>
 
     </section>
@@ -2573,6 +3657,47 @@
   </div>
   <!-- /PAGE 6 -->
 
+  <!-- =====================================================
+       FINAL CTA  ─  最終LINE予約
+  ===================================================== -->
+  <div class="page" id="page-final-cta">
+    <section class="final-cta-section" aria-labelledby="final-cta-title">
+      <div class="final-cta-card">
+        <p class="final-cta-kicker">まずは60分の体験から</p>
+        <h2 class="final-cta-title" id="final-cta-title">
+          BASEで<br><span>理想のカラダ</span>へ
+        </h2>
+        <p class="final-cta-copy">
+          無理な勧誘はありません。<br>
+          不安なこともLINEで気軽にご相談ください。
+        </p>
+        <div class="final-price-box">
+          <p class="final-price-label">体験トレーニング<br>60分 特別価格</p>
+          <p class="final-price">2,200<small>円（税込）</small></p>
+        </div>
+        <a href="#" class="final-line-btn">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/>
+          </svg>
+          <span>LINEで予約する<small>24時間受付中</small></span>
+        </a>
+      </div>
+
+      <div class="final-points">
+        <div class="final-point">無理な勧誘なし</div>
+        <div class="final-point">オンライン相談OK</div>
+        <div class="final-point">初心者歓迎</div>
+        <div class="final-point">薬院店・博多店</div>
+      </div>
+
+      <p class="final-close-copy">
+        今日の小さな一歩が、<br>
+        <span>3ヶ月後の自信</span>につながります。
+      </p>
+    </section>
+  </div>
+  <!-- /FINAL CTA -->
+
 <script>
   const wrap = document.querySelector('.reasons-wrap');
   const cards = document.querySelectorAll('.rs-card');
@@ -2603,6 +3728,55 @@
     });
   }, { threshold: 0.3 });
   faqObserver.observe(document.getElementById('page5'));
+
+  const flowSection = document.querySelector('.flow-section');
+  const flowSteps = document.querySelectorAll('.flow-step');
+  const flowObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        flowSection.classList.add('flow-visible');
+        flowSteps.forEach((step, i) => {
+          setTimeout(() => step.classList.add('flow-visible'), 140 + i * 130);
+        });
+        flowObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  flowObserver.observe(document.getElementById('page-flow'));
+
+  const teamSection = document.querySelector('.team-section');
+  const teamCards = document.querySelectorAll('.team-card');
+  const teamSupport = document.querySelector('.team-support');
+  const teamMessage = document.querySelector('.team-message');
+  const teamCta = document.querySelector('.team-cta');
+  const teamObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        teamSection.classList.add('team-visible');
+        teamCards.forEach((card, i) => {
+          setTimeout(() => card.classList.add('team-visible'), 120 + i * 90);
+        });
+        setTimeout(() => teamSupport.classList.add('team-visible'), 520);
+        setTimeout(() => teamMessage.classList.add('team-visible'), 650);
+        if (teamCta) {
+          setTimeout(() => teamCta.classList.add('team-visible'), 780);
+        }
+        teamObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.25 });
+  teamObserver.observe(document.getElementById('page-team'));
+
+  const finalCtaSection = document.querySelector('.final-cta-section');
+  const finalCtaObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        finalCtaSection.classList.add('final-visible');
+        finalCtaObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  finalCtaObserver.observe(document.getElementById('page-final-cta'));
 </script>
 
 </body>
