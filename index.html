@@ -81,6 +81,9 @@
       scroll-snap-align: start;
       scroll-snap-stop: always;
     }
+    #page1 {
+      position: relative;
+    }
 
     @supports not (height: 100dvh) {
       .swipe-container,
@@ -106,16 +109,21 @@
     =========================== */
     .header {
       flex: 0 0 auto;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 8;
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 9px 16px 8px;
-      background: var(--white);
-      border-bottom: 1px solid #ECE6DC;
+      gap: 13px;
+      padding: 20px 16px 8px;
+      background: transparent;
+      border-bottom: none;
     }
     .logo-mark svg {
-      width: 38px;
-      height: 38px;
+      width: 52px;
+      height: 52px;
       display: block;
     }
     .logo-wordmark {
@@ -124,26 +132,27 @@
       line-height: 1;
     }
     .logo-wordmark .pts {
-      font-size: 7.5px;
-      font-weight: 500;
+      font-size: 10.5px;
+      font-weight: 700;
       letter-spacing: 0.18em;
-      color: #777;
+      color: #111;
       text-transform: uppercase;
       margin-bottom: 1px;
     }
     /* ── ここを編集：ロゴ「BASE」 ── */
     .logo-wordmark .base {
-      font-size: 28px;
+      font-size: 42px;
       font-weight: 900;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       color: var(--black);
       line-height: 1;
     }
     .logo-wordmark .kana {
-      font-size: 9px;
-      color: #999;
+      font-size: 11px;
+      color: #111;
       letter-spacing: 0.24em;
       margin-top: 2px;
+      font-weight: 700;
     }
 
     /* ===========================
@@ -152,9 +161,9 @@
     =========================== */
     .hero {
       flex: 0 0 auto;
-      height: 44vh;
-      min-height: 310px;
-      max-height: 420px;
+      height: 55vh;
+      min-height: 452px;
+      max-height: 540px;
       position: relative;
       overflow: visible;
       background: var(--beige);
@@ -164,59 +173,88 @@
     .hero-left {
       position: relative;
       z-index: 2;
-      width: 66%;
+      width: 60%;
       height: 100%;
       background: linear-gradient(
         to right,
         rgba(246,240,232,0.98) 0%,
-        rgba(246,240,232,0.92) 48%,
-        rgba(246,240,232,0.35) 78%,
+        rgba(246,240,232,0.86) 42%,
+        rgba(246,240,232,0.24) 73%,
         rgba(246,240,232,0) 100%
       );
     }
     .hero-body {
-      padding: 15px 4px 0 16px;
+      padding: 118px 4px 0 16px;
+      position: relative;
+      z-index: 2;
+      isolation: isolate;
+      width: min(94vw, 640px);
+    }
+    .hero-body::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 3px;
+      left: -12px;
+      width: min(88vw, 360px);
+      height: 286px;
+      border-radius: 34px;
+      background:
+        radial-gradient(ellipse at 25% 36%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.66) 32%, rgba(255,255,255,0.24) 56%, rgba(255,255,255,0) 76%),
+        linear-gradient(to right, rgba(246,240,232,0.48), rgba(246,240,232,0.10) 66%, rgba(246,240,232,0));
+      filter: blur(14px);
+      pointer-events: none;
     }
 
     /* ── ここを編集：サブリード ── */
     .hero-lead {
-      font-size: clamp(13px, 3.7vw, 16px);
+      font-size: clamp(16px, 4.6vw, 20px);
       font-weight: 900;
       color: var(--black);
       letter-spacing: -0.01em;
-      margin-bottom: 6px;
+      margin-bottom: 10px;
       line-height: 1.4;
+      text-shadow: 0 1px 8px rgba(246,240,232,0.72);
     }
-    .hero-lead strong { color: var(--orange); font-weight: 900; }
+    .hero-lead strong {
+      color: var(--orange);
+      font-weight: 900;
+      text-shadow: 0 1px 8px rgba(246,240,232,0.78);
+    }
 
     /* ── ここを編集：メインキャッチ ── */
     .hero-headline {
-      font-size: clamp(44px, 12vw, 58px);
+      font-size: clamp(50px, 13.6vw, 68px);
       font-weight: 900;
       line-height: 1.02;
       color: var(--black);
       letter-spacing: -0.05em;
       word-break: keep-all;
+      text-shadow: 0 3px 18px rgba(246,240,232,0.86);
     }
     .hero-headline .hl-line1 { display: block; }
     .hero-headline .hl-line2 { display: block; }
-    .hero-headline .hl-orange { color: var(--orange); }
+    .hero-headline .hl-orange {
+      color: var(--orange);
+      text-shadow: 0 3px 18px rgba(246,240,232,0.88);
+    }
 
     /* オレンジ水平線 */
     .hero-rule {
-      width: 44px;
+      width: 146px;
       height: 3px;
       background: var(--orange);
-      margin: 9px 0 9px;
+      margin: 10px 0 12px;
       border-radius: 2px;
     }
 
     /* ── ここを編集：サブコピー ── */
     .hero-sub {
-      font-size: clamp(12px, 3.2vw, 14px);
-      font-weight: 700;
+      font-size: clamp(13px, 3.7vw, 17px);
+      font-weight: 900;
       color: #2a2a2a;
-      line-height: 1.7;
+      line-height: 1.75;
+      text-shadow: 0 1px 9px rgba(246,240,232,0.76);
     }
     .hero-sub .ul {
       font-weight: 700;
@@ -232,7 +270,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 62% 18%;
+      object-position: 60% 10%;
       display: block;
       filter: contrast(1.15) saturate(1.08) brightness(0.98);
       z-index: 0;
@@ -242,8 +280,8 @@
       content: "";
       position: absolute;
       bottom: 0; left: 0; right: 0;
-      height: 62px;
-      background: linear-gradient(to bottom, rgba(246,240,232,0) 0%, var(--beige) 100%);
+      height: 112px;
+      background: linear-gradient(to bottom, rgba(246,240,232,0) 0%, rgba(246,240,232,0.80) 55%, var(--beige) 100%);
       z-index: 3;
       pointer-events: none;
     }
@@ -255,11 +293,11 @@
       flex: 0 0 auto;
       display: flex;
       justify-content: center;
-      gap: 10px;
+      gap: 8px;
       position: relative;
       z-index: 5;
-      margin-top: -34px;
-      padding: 0 18px 10px;
+      margin-top: -76px;
+      padding: 0 14px 0;
       background: transparent;
     }
     .feat {
@@ -268,6 +306,10 @@
       flex-direction: column;
       align-items: center;
       gap: 6px;
+      transition: transform .2s ease;
+    }
+    .feat:nth-child(2) {
+      transform: translateX(-18px);
     }
     .feat-circle {
       width: 78px;
@@ -281,8 +323,8 @@
       box-shadow: 0 4px 14px rgba(0,0,0,0.12);
     }
     .feat-circle svg {
-      width: 28px;
-      height: 28px;
+      width: 30px;
+      height: 30px;
       stroke: var(--black);
       fill: none;
       stroke-width: 1.5;
@@ -291,7 +333,7 @@
     }
     /* ── ここを編集：アイコンラベル ── */
     .feat-label {
-      font-size: 12px;
+      font-size: 12.5px;
       font-weight: 900;
       text-align: center;
       line-height: 1.35;
@@ -303,35 +345,52 @@
     =========================== */
     .campaign-outer {
       flex: 0 0 auto;
+      width: 100%;
+      max-width: 404px;
       padding: 0 16px;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      display: flex;
+      justify-content: center;
       position: relative;
       z-index: 6;
+      box-sizing: border-box;
     }
     .campaign-card {
+      width: 100%;
+      max-width: 372px;
       background: var(--white);
-      border-radius: 18px;
-      box-shadow: 0 12px 32px rgba(0,0,0,0.14);
+      border-radius: 14px 14px 0 0;
+      border: 1px solid rgba(232,95,0,0.14);
+      border-bottom: none;
+      box-shadow:
+        0 12px 32px rgba(0,0,0,0.12),
+        0 0 0 1px rgba(255,255,255,0.64) inset;
       overflow: hidden;
     }
     .campaign-tag {
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 8px 14px 7px;
+      padding: 10px 14px 7px;
       border-bottom: 1px solid #F5EEE5;
     }
     .campaign-tag-inner {
       display: inline-flex;
       align-items: center;
-      border: 1.5px solid var(--orange);
-      border-radius: 4px;
-      padding: 3px 12px;
+      border: none;
+      border-radius: 0;
+      padding: 4px 16px;
+      background: var(--orange);
+      color: #fff;
+      clip-path: polygon(0 0, 94% 0, 100% 50%, 94% 100%, 0 100%, 6% 50%);
     }
     /* ── ここを編集：キャンペーンラベル ── */
     .campaign-tag-inner span {
       font-size: 13px;
       font-weight: 900;
-      color: var(--orange);
+      color: #fff;
       letter-spacing: 0.04em;
     }
     .campaign-body {
@@ -339,40 +398,42 @@
     }
     .campaign-col {
       flex: 1;
-      padding: 10px 8px 11px;
+      padding: 12px 8px 10px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 2px;
+      gap: 1px;
     }
     .campaign-col + .campaign-col {
       border-left: 1px solid #F0EAE0;
     }
     /* ── ここを編集：初回体験ラベル ── */
     .c-label {
-      font-size: 15px;
+      font-size: 13px;
       font-weight: 900;
       color: var(--black);
     }
     .c-badge {
-      font-size: 10.5px;
+      font-size: 10px;
       background: #F6F0E8;
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 2px 10px;
+      padding: 2px 9px;
       color: #444;
       font-weight: 700;
     }
     /* ── ここを編集：価格数字 ── */
     .c-price {
-      font-size: clamp(58px, 15vw, 72px);
+      font-size: clamp(70px, 18vw, 84px);
       font-weight: 900;
       color: var(--orange);
-      line-height: 1;
-      letter-spacing: -0.03em;
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      text-shadow: 0 3px 0 rgba(232,95,0,0.12);
+      margin: -1px 0;
     }
     .c-price-unit {
-      font-size: 13px;
+      font-size: 12px;
       color: var(--black);
       font-weight: 900;
     }
@@ -386,13 +447,15 @@
     }
     .c-note s { color: #B8B0A8; font-weight: 400; }
     .c-free {
-      font-size: clamp(58px, 15vw, 72px);
+      font-size: clamp(70px, 18vw, 84px);
       font-weight: 900;
       color: var(--orange);
-      line-height: 1;
-      letter-spacing: -0.03em;
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      text-shadow: 0 3px 0 rgba(232,95,0,0.12);
+      margin: -1px 0;
     }
-    .c-free-unit { font-size: 26px; font-weight: 900; }
+    .c-free-unit { font-size: 28px; font-weight: 900; }
 
     /* ===========================
        ACCESS  ─ flex: 0 0 auto
@@ -403,7 +466,15 @@
       justify-content: center;
       align-items: center;
       gap: 12px;
-      padding: 7px 12px 2px;
+      width: calc(100% - 32px);
+      max-width: 372px;
+      margin: 0 auto;
+      padding: 9px 12px 10px;
+      background: var(--white);
+      border: 1px solid rgba(232,95,0,0.14);
+      border-top: 1px solid #DDD8D0;
+      border-radius: 0 0 14px 14px;
+      box-shadow: 0 13px 28px rgba(0,0,0,0.10);
     }
     .access-item {
       display: flex;
@@ -421,7 +492,7 @@
     =========================== */
     .cta-section {
       flex: 0 0 auto;
-      padding: 8px 16px 0;
+      padding: 5px 16px 0;
       text-align: center;
     }
     /* ── ここを編集：CTAキャプション ── */
@@ -495,37 +566,38 @@
     }
 
     @media (max-height: 700px) {
-      .header { padding: 6px 14px 5px; gap: 8px; }
-      .logo-mark svg { width: 30px; height: 30px; }
-      .logo-wordmark .pts { font-size: 6.8px; }
-      .logo-wordmark .base { font-size: 23px; }
+      .header { padding: 10px 14px 5px; gap: 9px; }
+      .logo-mark svg { width: 40px; height: 40px; }
+      .logo-wordmark .pts { font-size: 7.5px; }
+      .logo-wordmark .base { font-size: 30px; }
       .logo-wordmark .kana { font-size: 8px; margin-top: 1px; }
       .hero {
-        height: 38vh;
-        min-height: 250px;
-        max-height: 320px;
+        height: 41vh;
+        min-height: 286px;
+        max-height: 310px;
       }
-      .hero-body { padding: 10px 4px 0 14px; }
+      .hero-body { padding: 82px 4px 0 14px; width: min(94vw, 620px); }
       .hero-lead { font-size: 11px; line-height: 1.25; margin-bottom: 4px; }
       .hero-headline { font-size: clamp(37px, 11vw, 46px); line-height: 0.98; }
       .hero-rule { width: 34px; height: 2px; margin: 7px 0 6px; }
       .hero-sub { font-size: 10.5px; line-height: 1.45; }
-      .features { gap: 8px; margin-top: -26px; padding: 0 14px 7px; }
+      .features { gap: 8px; margin-top: -32px; padding: 0 14px 1px; }
       .feat { gap: 4px; }
+      .feat:nth-child(2) { transform: translateX(-18px); }
       .feat-circle { width: 62px; height: 62px; }
       .feat-circle svg { width: 22px; height: 22px; }
       .feat-label { font-size: 10px; line-height: 1.25; }
-      .campaign-outer { padding: 0 12px; }
-      .campaign-card { border-radius: 14px; }
+      .campaign-outer { padding: 0 12px; margin-top: 5px; }
+      .campaign-card { max-width: 360px; border-radius: 16px 16px 0 0; }
       .campaign-tag { padding: 5px 12px 4px; }
       .campaign-tag-inner { padding: 2px 9px; }
       .campaign-tag-inner span { font-size: 10.8px; }
-      .campaign-col { padding: 7px 7px 8px; gap: 2px; }
-      .c-label { font-size: 12px; }
-      .c-badge { font-size: 9px; padding: 1px 8px; }
+      .campaign-col { padding: 7px 6px 8px; gap: 1px; }
+      .c-label { font-size: 11px; }
+      .c-badge { font-size: 8.8px; padding: 1px 7px; }
       .c-price,
-      .c-free { font-size: 46px; }
-      .c-free-unit { font-size: 20px; }
+      .c-free { font-size: clamp(54px, 15vw, 60px); line-height: 0.92; }
+      .c-free-unit { font-size: 21px; }
       .c-price-unit { font-size: 10px; }
       .c-note { font-size: 10px; line-height: 1.35; }
       .access { gap: 10px; padding: 5px 12px 2px; }
@@ -2846,6 +2918,26 @@
     .rs-card.rs-visible { opacity: 1; transform: translateY(0); }
 
   </style>
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '2067695387146647');
+    fbq('track', 'PageView');
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=2067695387146647&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
 <main class="swipe-container">
@@ -3816,15 +3908,55 @@
 </main>
 
 <script>
-  const metaLeadTrackedButtons = new WeakSet();
-  document.querySelectorAll('[data-meta-lead="true"]').forEach((button) => {
-    button.addEventListener('click', () => {
-      if (metaLeadTrackedButtons.has(button)) return;
-      metaLeadTrackedButtons.add(button);
-      if (typeof window.fbq === 'function') {
-        window.fbq('track', 'Lead');
+  document.addEventListener('DOMContentLoaded', function () {
+    const leadButtons = document.querySelectorAll('[data-meta-lead="true"]');
+
+    leadButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        if (typeof fbq === 'function') {
+          fbq('track', 'Lead');
+        }
+      });
+    });
+  });
+
+  const lpSlideViewTargets = [
+    { id: 'page1', name: 'ファーストビュー', index: 1 },
+    { id: 'page2', name: '実際の結果1', index: 2 },
+    { id: 'page-voices', name: 'お客様の声', index: 3 },
+    { id: 'page4', name: '選ばれる理由', index: 4 },
+    { id: 'page-team', name: 'トレーナー紹介', index: 5 },
+    { id: 'page-flow', name: '入会までの流れ', index: 6 },
+    { id: 'page5', name: 'よくある不安', index: 7 },
+    { id: 'page6', name: 'コース内容', index: 8 },
+    { id: 'page-final-cta', name: '最終CTA', index: 9 }
+  ];
+
+  const viewedLpSlides = new Set();
+  const lpSlideViewObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting || entry.intersectionRatio < 0.6) return;
+
+      const target = lpSlideViewTargets.find((slide) => slide.id === entry.target.id);
+      if (!target || viewedLpSlides.has(target.id)) return;
+
+      viewedLpSlides.add(target.id);
+
+      if (typeof window.gtag === 'function') {
+        window.gtag('event', 'lp_slide_view', {
+          slide_id: target.id,
+          slide_name: target.name,
+          slide_index: target.index
+        });
       }
     });
+  }, { threshold: 0.6 });
+
+  lpSlideViewTargets.forEach((target) => {
+    const slide = document.getElementById(target.id);
+    if (slide) {
+      lpSlideViewObserver.observe(slide);
+    }
   });
 
   const wrap = document.querySelector('.reasons-wrap');
