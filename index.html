@@ -178,8 +178,8 @@
       background: linear-gradient(
         to right,
         rgba(246,240,232,0.98) 0%,
-        rgba(246,240,232,0.86) 42%,
-        rgba(246,240,232,0.24) 73%,
+        rgba(246,240,232,0.78) 40%,
+        rgba(246,240,232,0.14) 68%,
         rgba(246,240,232,0) 100%
       );
     }
@@ -200,8 +200,8 @@
       height: 286px;
       border-radius: 34px;
       background:
-        radial-gradient(ellipse at 25% 36%, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.66) 32%, rgba(255,255,255,0.24) 56%, rgba(255,255,255,0) 76%),
-        linear-gradient(to right, rgba(246,240,232,0.48), rgba(246,240,232,0.10) 66%, rgba(246,240,232,0));
+        radial-gradient(ellipse at 18% 32%, rgba(255,255,255,0.76) 0%, rgba(255,255,255,0.42) 30%, rgba(255,255,255,0.12) 52%, rgba(255,255,255,0) 72%),
+        linear-gradient(to right, rgba(246,240,232,0.24), rgba(246,240,232,0.04) 58%, rgba(246,240,232,0));
       filter: blur(14px);
       pointer-events: none;
     }
@@ -274,9 +274,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      object-position: 60% 10%;
+      object-position: 66% 10%;
       display: block;
-      filter: contrast(1.15) saturate(1.08) brightness(0.98);
+      filter: contrast(1.12) saturate(1.08) brightness(1.04);
       z-index: 0;
     }
     /* 下フェード */
@@ -285,7 +285,7 @@
       position: absolute;
       bottom: 0; left: 0; right: 0;
       height: 112px;
-      background: linear-gradient(to bottom, rgba(246,240,232,0) 0%, rgba(246,240,232,0.80) 55%, var(--beige) 100%);
+      background: linear-gradient(to bottom, rgba(246,240,232,0) 0%, rgba(246,240,232,0.58) 58%, var(--beige) 100%);
       z-index: 1;
       pointer-events: none;
     }
@@ -316,8 +316,8 @@
     .feat-circle {
       position: relative;
       z-index: 2;
-      width: 78px;
-      height: 78px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background: #fff;
       border: 1.5px solid #ECE6DC;
@@ -507,9 +507,10 @@
       margin-bottom: 6px;
     }
     .cta-btn {
+      position: relative;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
       background: var(--green);
       color: var(--white);
       border-radius: 999px;
@@ -545,7 +546,15 @@
       font-weight: 900;
       letter-spacing: 0.01em;
     }
-    .cta-arrow { font-size: 24px; font-weight: 900; line-height: 1; }
+    .cta-arrow {
+      position: absolute;
+      right: 22px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      font-weight: 900;
+      line-height: 1;
+    }
 
     /* ===========================
        FOOTER NOTE  ─ flex: 0 0 auto
@@ -587,8 +596,8 @@
       .hero-sub { font-size: 10.5px; line-height: 1.45; }
       .features { gap: 0; margin-top: -8px; padding: 0 14px 1px; }
       .feat { gap: 4px; }
-      .feat-circle { width: 62px; height: 62px; }
-      .feat-circle svg { width: 22px; height: 22px; }
+      .feat-circle { width: 56px; height: 56px; }
+      .feat-circle svg { width: 20px; height: 20px; }
       .feat-label { font-size: 10px; line-height: 1.25; }
       .campaign-outer { padding: 0 12px; margin-top: 5px; }
       .campaign-card { max-width: 360px; border-radius: 16px 16px 0 0; }
@@ -610,6 +619,7 @@
       .cta-caption { font-size: 9px; margin-bottom: 4px; }
       .cta-btn { padding: 13px 18px; }
       .cta-text { font-size: 15px; }
+      .cta-arrow { right: 18px; }
       .line-icon-wrap { width: 25px; height: 25px; }
       .line-icon-wrap svg { width: 18px; height: 18px; }
       .cta-arrow { font-size: 20px; }
@@ -754,8 +764,13 @@
       background: #fff;
     }
     #page2 .rp-photo-collage {
+      flex: 0 0 226px;
+      height: 226px;
       object-fit: cover;
       object-position: 82% center;
+    }
+    #page2 .rp-case-top {
+      padding-top: 6px;
     }
 
     /* 数値スタッツ */
@@ -818,6 +833,33 @@
       padding: 10px 14px;
       margin-top: 8px;
       flex-shrink: 0;
+    }
+    #page2 .rp-voice-card {
+      padding: 8px 12px;
+      margin-top: 6px;
+    }
+    #page2 .rp-voice-avatar-circle {
+      width: 42px;
+      height: 42px;
+    }
+    #page2 .rp-voice-avatar-circle svg {
+      width: 33px;
+      height: 33px;
+    }
+    #page2 .rp-voice-stars {
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+    #page2 .rp-voice-headline {
+      font-size: 13px;
+      margin-bottom: 2px;
+    }
+    #page2 .rp-voice-text {
+      font-size: 10px;
+      line-height: 1.45;
+    }
+    #page2 .rp-footnote {
+      margin-top: 4px;
     }
     .rp-voice-inner {
       display: flex;
@@ -1148,8 +1190,8 @@
       position: relative;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      background: linear-gradient(180deg, #F2FBF5 0%, #FFFFFF 100%);
-      border: 1.5px solid rgba(0,122,61,0.22);
+      background: linear-gradient(180deg, #FFF8F2 0%, #FFFFFF 100%);
+      border: 1.5px solid rgba(232,95,0,0.24);
       border-radius: 11px;
       margin-top: 2px;
       overflow: hidden;
@@ -1159,7 +1201,7 @@
       position: absolute;
       left: 7px;
       top: -1px;
-      background: #007A3D;
+      background: var(--orange);
       color: #FFFFFF;
       font-size: 8.5px;
       font-weight: 900;
@@ -1173,7 +1215,7 @@
       align-items: center;
       justify-content: center;
       gap: 2px;
-      padding: 17px 5px 8px;
+      padding: 18px 5px 9px;
     }
     .cv-result-item + .cv-result-item {
       border-left: 1px solid rgba(6,26,68,0.18);
@@ -1184,14 +1226,14 @@
       color: #061A44;
     }
     .cv-result-num {
-      font-size: 30px;
+      font-size: 38px;
       font-weight: 900;
-      color: #007A3D;
+      color: var(--orange);
       line-height: 1;
       letter-spacing: -0.02em;
     }
     .cv-result-num small {
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 900;
       letter-spacing: 0;
     }
@@ -1252,12 +1294,14 @@
     }
     .cv-bottom {
       flex-shrink: 0;
+      position: relative;
       text-align: center;
       background: #FFF9E8;
       border: 1px solid rgba(246,184,0,0.65);
       border-radius: 12px;
-      padding: 12px 12px;
-      margin-top: 18px;
+      padding: 18px 12px 10px;
+      margin-top: 24px;
+      overflow: visible;
     }
     .cv-bottom-icon {
       display: none;
@@ -1283,6 +1327,23 @@
     .cv-yellow {
       color: #F6B800;
     }
+    .cv-bottom-pop {
+      display: inline-block;
+      position: relative;
+      z-index: 1;
+      top: -30px;
+      margin: 0 0 -30px;
+      padding: 2px 10px 3px;
+      color: var(--orange);
+      font-size: 22px;
+      font-weight: 900;
+      line-height: 1.05;
+      background: #FFFFFF;
+      border: 2px solid var(--orange);
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(232,95,0,0.18);
+      transform: rotate(-1deg);
+    }
     @media (max-height: 780px) {
       #page-voices { padding: 9px 10px 9px; }
       .cv-wrap { gap: 9px; }
@@ -1302,19 +1363,20 @@
       .cv-card-title { font-size: 11.5px; }
       .cv-text { font-size: 8.6px; line-height: 1.3; }
       .cv-result-item { padding: 17px 4px 8px; }
-      .cv-result-num { font-size: 26px; }
-      .cv-result-num small { font-size: 12px; }
+      .cv-result-num { font-size: 36px; }
+      .cv-result-num small { font-size: 15px; }
       .cv-result-label { font-size: 9px; }
       .cv-result::before { font-size: 8px; padding: 3px 6px; }
-      .cv-bottom { margin-top: 14px; }
+      .cv-bottom { margin-top: 22px; }
       .cv-reasons { padding: 6px; }
       .cv-reason-icon { width: 17px; height: 17px; margin-bottom: 3px; }
       .cv-reason-title { font-size: 8px; }
       .cv-reason-text { font-size: 7px; line-height: 1.28; }
-      .cv-bottom { padding: 7px 10px; }
+      .cv-bottom { padding: 16px 10px 8px; }
       .cv-bottom-icon { width: 28px; height: 28px; }
       .cv-bottom-main { font-size: 11.5px; }
       .cv-bottom-sub { font-size: 9.5px; }
+      .cv-bottom-pop { top: -28px; margin-bottom: -28px; font-size: 18px; padding: 2px 9px 3px; }
     }
 
 
@@ -2265,7 +2327,7 @@
     .team-photo {
       position: relative;
       width: 100%;
-      height: 122px;
+      height: 170px;
       overflow: hidden;
       background: #F1F5F9;
       border-bottom: 1px solid #E5E7EB;
@@ -2561,7 +2623,7 @@
       .team-hero-photo { min-height: 62px; }
       .team-logo-text { display: none; }
       .team-staff-grid { gap: 6px; }
-      .team-photo { height: 106px; }
+      .team-photo { height: 154px; }
       .team-card-body { padding: 6px 7px 8px; }
       .team-name { font-size: 12.4px; }
       .team-roman { font-size: 8.2px; }
@@ -2916,19 +2978,20 @@
       text-align: center; font-size: 9.5px; color: #666; font-weight: 600;
     }
     .cp-cta-btn {
-      display: flex; align-items: center; justify-content: space-between;
+      display: flex; align-items: center; justify-content: center; gap: 7px;
       background: #06C755; color: #fff; border-radius: 50px;
-      padding: 13px 18px; text-decoration: none; width: 100%;
-      box-shadow: 0 4px 16px rgba(6,199,85,0.36);
+      padding: 9px 13px; text-decoration: none; width: 72%;
+      margin: 0 auto;
+      box-shadow: 0 3px 12px rgba(6,199,85,0.28);
     }
     .cp-line-icon {
-      width: 28px; height: 28px; background: rgba(255,255,255,0.22);
-      border-radius: 7px; display: flex; align-items: center;
+      width: 20px; height: 20px; background: rgba(255,255,255,0.22);
+      border-radius: 6px; display: flex; align-items: center;
       justify-content: center; flex-shrink: 0;
     }
-    .cp-line-icon svg { width: 20px; height: 20px; }
-    .cp-cta-text { font-size: 14px; font-weight: 900; flex: 1; text-align: center; }
-    .cp-cta-arrow { font-size: 22px; font-weight: 900; }
+    .cp-line-icon svg { width: 15px; height: 15px; }
+    .cp-cta-text { font-size: 11px; font-weight: 900; flex: 0 1 auto; text-align: center; white-space: nowrap; }
+    .cp-cta-arrow { font-size: 16px; font-weight: 900; line-height: 1; }
     .cp-cta-note {
       text-align: center; font-size: 9px; color: #aaa;
     }
@@ -2970,11 +3033,11 @@
       .cp-trial-list { gap: 1px; }
       .cp-trial-list li { font-size: 8.7px; }
       .cp-cta-caption { font-size: 8.5px; line-height: 1.25; }
-      .cp-cta-btn { padding: 11px 16px; }
-      .cp-line-icon { width: 25px; height: 25px; }
-      .cp-line-icon svg { width: 18px; height: 18px; }
-      .cp-cta-text { font-size: 12.4px; }
-      .cp-cta-arrow { font-size: 20px; }
+      .cp-cta-btn { width: 72%; padding: 8px 12px; gap: 6px; }
+      .cp-line-icon { width: 18px; height: 18px; }
+      .cp-line-icon svg { width: 13px; height: 13px; }
+      .cp-cta-text { font-size: 10px; }
+      .cp-cta-arrow { font-size: 15px; }
       .cp-cta-note { font-size: 8px; line-height: 1.25; }
     }
 
@@ -3377,7 +3440,7 @@
 
       <div class="cv-bottom">
         <div>
-          <p class="cv-bottom-main">運動初心者でも、<span class="cv-yellow">結果は出せる。</span></p>
+          <p class="cv-bottom-main">運動初心者でも、<span class="cv-bottom-pop">結果は出せる。</span></p>
           <p class="cv-bottom-sub">まずは60分の体験で確かめてください。</p>
         </div>
       </div>
@@ -3579,40 +3642,6 @@
             <p class="team-comment">続けられる食習慣づくりをサポートします。</p>
           </div>
         </article>
-      </div>
-
-      <div class="team-support">
-        <h3 class="team-support-title">BASEのサポート体制</h3>
-        <div class="team-support-grid">
-          <div class="team-support-item">
-            <div class="team-support-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M5 12h14M3 9v6M21 9v6M8 8v8M16 8v8"/></svg>
-            </div>
-            <p class="team-support-h">トレーニング</p>
-            <p class="team-support-p">目標や体力に合わせたメニュー</p>
-          </div>
-          <div class="team-support-item">
-            <div class="team-support-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="M7 3v18M12 3v18M17 4v17M7 9h10"/></svg>
-            </div>
-            <p class="team-support-h">食事サポート</p>
-            <p class="team-support-p">LINEで毎日の食事を支える</p>
-          </div>
-          <div class="team-support-item">
-            <div class="team-support-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="12" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="11" r="2"/></svg>
-            </div>
-            <p class="team-support-h">オンライン相談</p>
-            <p class="team-support-p">不安や疑問を気軽に相談OK</p>
-          </div>
-          <div class="team-support-item">
-            <div class="team-support-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="17" rx="2"/><path d="M8 3v4M16 3v4M4 10h16M8 14h3M13 14h3M8 18h3"/></svg>
-            </div>
-            <p class="team-support-h">3ヶ月伴走</p>
-            <p class="team-support-p">チームで最後までサポート</p>
-          </div>
-        </div>
       </div>
 
       <div class="team-message">
