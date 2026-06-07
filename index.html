@@ -121,38 +121,11 @@
       background: transparent;
       border-bottom: none;
     }
-    .logo-mark svg {
-      width: 52px;
-      height: 52px;
+    .header-logo {
+      width: clamp(54px, 15vw, 84px);
+      height: auto;
       display: block;
-    }
-    .logo-wordmark {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-    }
-    .logo-wordmark .pts {
-      font-size: 10.5px;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      color: #111;
-      text-transform: uppercase;
-      margin-bottom: 1px;
-    }
-    /* ── ここを編集：ロゴ「BASE」 ── */
-    .logo-wordmark .base {
-      font-size: 42px;
-      font-weight: 900;
-      letter-spacing: 0.05em;
-      color: var(--black);
-      line-height: 1;
-    }
-    .logo-wordmark .kana {
-      font-size: 11px;
-      color: #111;
-      letter-spacing: 0.24em;
-      margin-top: 2px;
-      font-weight: 700;
+      box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
     }
 
     /* ===========================
@@ -184,7 +157,7 @@
       );
     }
     .hero-body {
-      padding: 118px 4px 0 16px;
+      padding: 126px 4px 0 16px;
       position: relative;
       z-index: 6;
       isolation: isolate;
@@ -580,16 +553,13 @@
 
     @media (max-height: 700px) {
       .header { padding: 10px 14px 5px; gap: 9px; }
-      .logo-mark svg { width: 40px; height: 40px; }
-      .logo-wordmark .pts { font-size: 7.5px; }
-      .logo-wordmark .base { font-size: 30px; }
-      .logo-wordmark .kana { font-size: 8px; margin-top: 1px; }
+      .header-logo { width: 54px; }
       .hero {
         height: 41vh;
         min-height: 286px;
         max-height: 310px;
       }
-      .hero-body { padding: 82px 4px 0 14px; width: min(94vw, 620px); }
+      .hero-body { padding: 90px 4px 0 14px; width: min(94vw, 620px); }
       .hero-lead { font-size: 11px; line-height: 1.25; margin-bottom: 4px; }
       .hero-headline { font-size: clamp(37px, 11vw, 46px); line-height: 0.98; }
       .hero-rule { width: 34px; height: 2px; margin: 7px 0 6px; }
@@ -2355,6 +2325,9 @@
     .team-photo-img-2 {
       object-position: center 32%;
     }
+    .team-photo img.team-photo-img-matsuo {
+      object-position: center 24%;
+    }
     .team-photo-img-staff {
       object-position: center 30%;
     }
@@ -3083,20 +3056,7 @@
 
     <!-- HEADER -->
     <header class="header">
-      <!-- ロゴマーク（PDFデザイン準拠：黒枠・白左上・ティール右下） -->
-      <div class="logo-mark">
-        <svg viewBox="0 0 46 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="18" y="18" width="27" height="27" fill="#2BBFCE"/>
-          <rect x="1"  y="1"  width="28" height="28" fill="#FFFFFF"/>
-          <rect x="1"  y="1"  width="28" height="28" fill="none" stroke="#111111" stroke-width="2.6"/>
-        </svg>
-      </div>
-      <!-- ── ここを編集：ロゴテキスト ── -->
-      <div class="logo-wordmark">
-        <span class="pts">PERSONAL TRAINING STUDIO</span>
-        <span class="base">BASE</span>
-        <span class="kana">・ベイス・</span>
-      </div>
+      <img class="header-logo" src="S__17817604.jpg" alt="PERSONAL TRAINING STUDIO BASE -ベイス-">
     </header>
 
     <!-- HERO：フルブリード背景写真 + テキストオーバーレイ -->
@@ -3606,13 +3566,8 @@
 
         <article class="team-card">
           <div class="team-card-top">
-            <div class="team-photo team-placeholder">
-              <svg viewBox="0 0 80 80" aria-hidden="true">
-                <rect width="80" height="80" fill="#F1F5F9"/>
-                <circle cx="40" cy="28" r="15" fill="#061A44"/>
-                <path d="M14 80c2-21 15-35 26-35s24 14 26 35" fill="#DDE7F2"/>
-                <path d="M19 62h42" stroke="#F6B800" stroke-width="5" stroke-linecap="round"/>
-              </svg>
+            <div class="team-photo">
+              <img class="team-photo-img-matsuo" src="S__17817605.jpg" alt="松尾 優哉">
             </div>
           </div>
           <div class="team-card-body">
@@ -3920,7 +3875,7 @@
       <div class="cp-support-grid">
         <div class="cp-support-item">
           <svg viewBox="0 0 20 20" fill="none" stroke="#061A44" stroke-width="1.5" stroke-linecap="round"><path d="M6 9h8M10 5v10"/><rect x="3" y="3" width="14" height="14" rx="3"/></svg>
-          ウェア・タオル無料
+          持ち物は事前案内
         </div>
         <div class="cp-support-item">
           <svg viewBox="0 0 20 20" fill="none" stroke="#061A44" stroke-width="1.5" stroke-linecap="round"><path d="M10 3v1.5M7.5 4.2l1 1.5M12.5 4.2l-1 1.5"/><path d="M5 8h10l-1 7H6L5 8z"/></svg>
