@@ -1019,6 +1019,7 @@
       flex-direction: column;
       gap: 12px;
       overflow: hidden;
+      transform: translateY(18px);
     }
     .cv-head {
       flex-shrink: 0;
@@ -1319,7 +1320,7 @@
     }
     @media (max-height: 780px) {
       #page-voices { padding: 7px 10px 8px; }
-      .cv-wrap { gap: 7px; }
+      .cv-wrap { gap: 7px; transform: translateY(18px); }
       .cv-kicker { font-size: 9.4px; }
       .cv-title { font-size: 20px; line-height: 1.08; }
       .cv-lead { font-size: 9.8px; }
@@ -2197,7 +2198,7 @@
       flex-direction: column;
       justify-content: center;
       gap: 7px;
-      padding: 24px 10px 0;
+      padding: 18px 10px 0;
       overflow: hidden;
       opacity: 0;
       transform: translateY(16px);
@@ -2205,7 +2206,7 @@
     }
     .team-section.team-visible {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(-8px);
     }
     .team-hero {
       flex-shrink: 0;
@@ -2593,7 +2594,7 @@
       border-left: 1px solid rgba(255,255,255,0.18);
     }
     @media (max-height: 860px) {
-      .team-section { gap: 4px; padding: 18px 9px 0; }
+      .team-section { gap: 4px; padding: 14px 9px 0; }
       .team-hero { grid-template-columns: 1fr 78px; padding: 6px 7px; border-radius: 14px; }
       .team-kicker { font-size: 8px; line-height: 1.25; }
       .team-title { font-size: 18px; line-height: 1; margin-top: 2px; }
