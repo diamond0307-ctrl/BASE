@@ -1315,38 +1315,40 @@
       transform: rotate(-1deg);
     }
     @media (max-height: 780px) {
-      #page-voices { padding: 9px 10px 9px; }
-      .cv-wrap { gap: 9px; }
+      #page-voices { padding: 7px 10px 8px; }
+      .cv-wrap { gap: 7px; }
       .cv-kicker { font-size: 9.4px; }
-      .cv-title { font-size: 21px; }
+      .cv-title { font-size: 20px; line-height: 1.08; }
       .cv-lead { font-size: 9.8px; }
-      .cv-title-line { margin: 4px auto 3px; }
-      .cv-list { gap: 10px; }
-      .cv-card { grid-template-columns: 62px 1fr; gap: 7px; padding: 10px 8px; }
-      .cv-avatar { width: 36px; height: 36px; }
+      .cv-title-line { margin: 3px auto 2px; }
+      .cv-list { gap: 7px; }
+      .cv-card { grid-template-columns: 58px 1fr; gap: 6px; padding: 7px 8px; border-radius: 12px; }
+      .cv-profile { gap: 3px; }
+      .cv-avatar { width: 30px; height: 30px; }
       .cv-avatar svg { width: 28px; height: 28px; }
       .cv-age { font-size: 8.6px; padding: 3px 5px; }
       .cv-job { font-size: 8.8px; }
       .cv-purpose { font-size: 8px; line-height: 1.25; }
       .cv-purpose span { font-size: 8px; }
+      .cv-main { gap: 3px; }
       .cv-stars { font-size: 10px; }
       .cv-card-title { font-size: 11.5px; }
       .cv-text { font-size: 8.6px; line-height: 1.3; }
-      .cv-result-item { padding: 17px 4px 8px; }
-      .cv-result-num { font-size: 36px; }
-      .cv-result-num small { font-size: 15px; }
+      .cv-result-item { padding: 14px 4px 6px; }
+      .cv-result-num { font-size: 31px; }
+      .cv-result-num small { font-size: 13px; }
       .cv-result-label { font-size: 9px; }
       .cv-result::before { font-size: 8px; padding: 3px 6px; }
-      .cv-bottom { margin-top: 22px; }
+      .cv-bottom { margin-top: 16px; }
       .cv-reasons { padding: 6px; }
       .cv-reason-icon { width: 17px; height: 17px; margin-bottom: 3px; }
       .cv-reason-title { font-size: 8px; }
       .cv-reason-text { font-size: 7px; line-height: 1.28; }
-      .cv-bottom { padding: 16px 10px 8px; }
+      .cv-bottom { padding: 14px 10px 7px; }
       .cv-bottom-icon { width: 28px; height: 28px; }
       .cv-bottom-main { font-size: 11.5px; }
-      .cv-bottom-sub { font-size: 9.5px; }
-      .cv-bottom-pop { top: -28px; margin-bottom: -28px; font-size: 18px; padding: 2px 9px 3px; }
+      .cv-bottom-sub { font-size: 9px; }
+      .cv-bottom-pop { top: -24px; margin-bottom: -24px; font-size: 17px; padding: 2px 9px 3px; }
     }
 
 
@@ -2587,31 +2589,34 @@
       border-left: 1px solid rgba(255,255,255,0.18);
     }
     @media (max-height: 860px) {
-      .team-section { gap: 5px; padding: 6px 9px 7px; }
-      .team-hero { grid-template-columns: 1fr 82px; padding: 7px; border-radius: 14px; }
-      .team-kicker { font-size: 8.4px; }
-      .team-title { font-size: 19px; }
-      .team-title-accent { font-size: 22px; }
-      .team-lead { font-size: 8.2px; line-height: 1.34; margin-top: 4px; }
-      .team-hero-photo { min-height: 62px; }
+      .team-section { gap: 4px; padding: 5px 9px 6px; }
+      .team-hero { grid-template-columns: 1fr 78px; padding: 6px 7px; border-radius: 14px; }
+      .team-kicker { font-size: 8px; line-height: 1.25; }
+      .team-title { font-size: 18px; line-height: 1; margin-top: 2px; }
+      .team-title-accent { font-size: 21px; }
+      .team-lead { font-size: 7.8px; line-height: 1.28; margin-top: 3px; }
+      .team-hero-photo { min-height: 56px; }
       .team-logo-text { display: none; }
-      .team-staff-grid { gap: 6px; }
-      .team-photo { height: 154px; }
-      .team-card-body { padding: 6px 7px 8px; }
-      .team-name { font-size: 12.4px; }
-      .team-roman { font-size: 8.2px; }
-      .team-role { font-size: 8.2px; padding: 2px 6px; }
-      .team-mini-label { font-size: 8.2px; padding: 2px 4px; }
-      .team-specialty { font-size: 8.2px; min-height: 19px; margin-top: 4px; }
-      .team-comment { font-size: 8px; line-height: 1.34; margin-top: 4px; }
+      .team-staff-grid { gap: 5px; }
+      .team-card { border-radius: 13px; }
+      .team-photo { height: 128px; }
+      .team-photo img,
+      .team-placeholder svg { transform: scale(1); }
+      .team-card-body { padding: 5px 7px 6px; }
+      .team-name { font-size: 11.2px; margin-top: 4px; }
+      .team-roman { font-size: 7.6px; margin-top: 1px; }
+      .team-role { font-size: 7.6px; padding: 2px 6px; }
+      .team-mini-label { font-size: 7.6px; padding: 2px 4px; margin-right: 3px; }
+      .team-specialty { font-size: 7.6px; min-height: 17px; margin-top: 3px; line-height: 1.24; }
+      .team-comment { font-size: 7.4px; line-height: 1.26; margin-top: 3px; }
       .team-support { padding: 5px 6px; }
       .team-support-title { font-size: 9.5px; margin-bottom: 4px; }
       .team-support-item { padding: 4px 1px; gap: 2px; }
       .team-support-icon { width: 13px; height: 13px; }
       .team-support-h { font-size: 8.2px; }
-      .team-message { padding: 6px 8px; }
-      .team-message-icon { width: 22px; height: 22px; }
-      .team-message-text { font-size: 10px; }
+      .team-message { padding: 5px 8px; gap: 6px; }
+      .team-message-icon { width: 20px; height: 20px; }
+      .team-message-text { font-size: 9.4px; line-height: 1.25; }
       .team-cta { grid-template-columns: 1fr 126px; padding: 8px 9px; }
       .team-cta-copy { font-size: 9.4px; }
       .team-price { font-size: 20px; }
@@ -3479,7 +3484,7 @@
         <div class="rs-stores">
           <div class="rs-store-item">
             <div class="rs-store-photo-wrap">
-              <img src="gym-warm.jpg" alt="薬院店" class="rs-photo" style="object-position: center center;">
+              <img src="gym-bright.jpg" alt="薬院店" class="rs-photo" style="object-position: center center;">
             </div>
             <div class="rs-store-label">
               <div class="rs-store-name">薬院店</div>
@@ -3488,7 +3493,7 @@
           </div>
           <div class="rs-store-item">
             <div class="rs-store-photo-wrap">
-              <img src="gym-bright.jpg" alt="博多店" class="rs-photo" style="object-position: center center;">
+              <img src="gym-warm.jpg" alt="博多店" class="rs-photo" style="object-position: center center;">
             </div>
             <div class="rs-store-label">
               <div class="rs-store-name">博多店</div>
