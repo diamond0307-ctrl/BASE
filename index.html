@@ -633,13 +633,14 @@
       margin-bottom: 4px;
     }
     .rp-h2 {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 900;
       line-height: 1.2;
       color: var(--black);
+      white-space: nowrap;
     }
     .rp-big-month {
-      font-size: 38px;
+      font-size: 34px;
       font-weight: 900;
       color: var(--orange);
       line-height: 1;
@@ -696,9 +697,10 @@
     }
     .rp-case-kg-wrap {
       display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      gap: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
       margin-bottom: 2px;
     }
     .rp-case-period {
@@ -706,20 +708,22 @@
       font-weight: 700;
       color: var(--black);
       line-height: 1.1;
+      white-space: nowrap;
+      transform: translateY(3px);
     }
     .rp-case-kg {
       display: block;
-      font-size: 52px;
+      font-size: 62px;
       font-weight: 900;
       color: var(--orange);
       line-height: 1;
       letter-spacing: -0.04em;
       text-align: center;
-      width: 100%;
-      margin-top: -2px;
+      width: auto;
+      margin-top: 0;
     }
     .rp-case-kg small {
-      font-size: 20px;
+      font-size: 24px;
       font-weight: 900;
       letter-spacing: 0;
     }
@@ -3338,7 +3342,7 @@
 
     <div class="rp-headline">
       <h2 class="rp-h2">
-        <span class="rp-big-month">3ヶ月</span>で<br>ここまで変わりました！
+        <span class="rp-big-month">3ヶ月</span>でここまで変わりました！
       </h2>
     </div>
 
