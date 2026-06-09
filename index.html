@@ -1621,7 +1621,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 38px 14px 12px;
+      padding: 24px 14px 12px;
       gap: 9px;
       overflow: hidden;
       opacity: 0;
@@ -1906,18 +1906,23 @@
       color: #475569;
     }
     .faq-bridge-next {
-      margin-top: 8px;
+      width: fit-content;
+      margin: 10px auto 0;
+      padding: 7px 14px 6px;
       text-align: center;
-      font-size: 9.5px;
+      font-size: 12px;
       font-weight: 900;
       line-height: 1.25;
-      color: #061A44;
+      color: #FFFFFF;
+      background: #061A44;
+      border-radius: 999px;
+      box-shadow: 0 5px 14px rgba(6,26,68,0.14);
     }
     .faq-bridge-arrow {
       display: block;
-      margin-top: 1px;
-      color: #1F8F4E;
-      font-size: 13px;
+      margin-top: 3px;
+      color: #06C755;
+      font-size: 18px;
       line-height: 1;
     }
     .faq-photo-wrap {
@@ -1940,7 +1945,7 @@
       }
     }
     @media (max-height: 780px) {
-      .faq-section { padding: 20px 12px 8px; gap: 6px; }
+      .faq-section { padding: 14px 12px 8px; gap: 6px; }
       .faq-kicker { font-size: 8.6px; line-height: 1.25; }
       .faq-kicker::before,
       .faq-kicker::after { width: 9px; margin: 0 4px; }
@@ -1967,8 +1972,8 @@
       .faq-bridge-num { width: 20px; height: 20px; font-size: 9px; }
       .faq-bridge-point-title { font-size: 8.6px; }
       .faq-bridge-point-text { font-size: 7.5px; line-height: 1.2; }
-      .faq-bridge-next { margin-top: 5px; font-size: 8.5px; }
-      .faq-bridge-arrow { font-size: 11px; }
+      .faq-bridge-next { margin-top: 6px; padding: 6px 12px 5px; font-size: 10px; }
+      .faq-bridge-arrow { margin-top: 2px; font-size: 15px; }
     }
 
     /* ===========================
@@ -3065,9 +3070,9 @@
     .cp-cta-btn {
       display: flex; align-items: center; justify-content: center; gap: 9px;
       background: #06C755; color: #fff; border-radius: 50px;
-      padding: 13px 16px; text-decoration: none; width: 90%;
+      padding: 16px 18px; text-decoration: none; width: 90%;
       margin: 0 auto;
-      min-height: 50px;
+      min-height: 60px;
       box-shadow: 0 6px 18px rgba(6,199,85,0.34);
     }
     .cp-line-icon {
@@ -3080,6 +3085,7 @@
     .cp-cta-arrow { font-size: 20px; font-weight: 900; line-height: 1; }
     .cp-cta-note {
       text-align: center; font-size: 9px; color: #aaa;
+      margin-top: 3px;
     }
     @media (max-height: 780px) {
       .cp-wrap { padding: 9px 12px 8px; gap: 5px; }
@@ -3119,12 +3125,12 @@
       .cp-trial-list { gap: 1px; }
       .cp-trial-list li { font-size: 8.7px; }
       .cp-cta-caption { font-size: 8.5px; line-height: 1.25; margin-top: 6px; }
-      .cp-cta-btn { width: 90%; min-height: 46px; padding: 11px 14px; gap: 8px; }
+      .cp-cta-btn { width: 90%; min-height: 54px; padding: 14px 16px; gap: 8px; }
       .cp-line-icon { width: 24px; height: 24px; }
       .cp-line-icon svg { width: 17px; height: 17px; }
       .cp-cta-text { font-size: 12px; }
       .cp-cta-arrow { font-size: 19px; }
-      .cp-cta-note { font-size: 8px; line-height: 1.25; }
+      .cp-cta-note { font-size: 8px; line-height: 1.25; margin-top: 2px; }
     }
 
     /* フェードインアニメーション */
