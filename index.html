@@ -185,7 +185,7 @@
       font-weight: 900;
       color: var(--black);
       letter-spacing: -0.01em;
-      margin-bottom: 10px;
+      margin-bottom: 0;
       line-height: 1.4;
       text-shadow: 0 1px 8px rgba(246,240,232,0.72);
     }
@@ -1631,7 +1631,7 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 24px 14px 12px;
+      padding: 12px 14px 12px;
       gap: 9px;
       overflow: hidden;
       opacity: 0;
@@ -1917,16 +1917,17 @@
     }
     .faq-bridge-next {
       width: fit-content;
-      margin: 10px auto 0;
-      padding: 7px 14px 6px;
+      flex-shrink: 0;
+      margin: 7px auto 0;
+      padding: 11px 22px 9px;
       text-align: center;
-      font-size: 12px;
+      font-size: 15px;
       font-weight: 900;
       line-height: 1.25;
       color: #FFFFFF;
       background: #061A44;
       border-radius: 999px;
-      box-shadow: 0 5px 14px rgba(6,26,68,0.14);
+      box-shadow: 0 8px 22px rgba(6,26,68,0.18);
     }
     .faq-bridge-arrow {
       display: block;
@@ -1955,7 +1956,7 @@
       }
     }
     @media (max-height: 780px) {
-      .faq-section { padding: 14px 12px 8px; gap: 6px; }
+      .faq-section { padding: 8px 12px 8px; gap: 6px; }
       .faq-kicker { font-size: 9.2px; line-height: 1.25; }
       .faq-kicker::before,
       .faq-kicker::after { width: 9px; margin: 0 4px; }
@@ -1982,8 +1983,8 @@
       .faq-bridge-num { width: 20px; height: 20px; font-size: 9px; }
       .faq-bridge-point-title { font-size: 9.2px; }
       .faq-bridge-point-text { font-size: 8px; line-height: 1.15; }
-      .faq-bridge-next { margin-top: 5px; padding: 6px 12px 5px; font-size: 10.8px; }
-      .faq-bridge-arrow { margin-top: 2px; font-size: 15px; }
+      .faq-bridge-next { margin-top: 6px; padding: 9px 16px 8px; font-size: 12px; }
+      .faq-bridge-arrow { margin-top: 2px; font-size: 16px; }
     }
 
     /* ===========================
@@ -3953,8 +3954,9 @@
           </div>
         </div>
 
-        <p class="faq-bridge-next">次のページでコース内容をご紹介します<span class="faq-bridge-arrow">↓</span></p>
       </div>
+
+      <p class="faq-bridge-next">次のページでコース内容をご紹介します<span class="faq-bridge-arrow">↓</span></p>
 
     </section>
   </section>
